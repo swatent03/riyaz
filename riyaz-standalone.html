@@ -1,0 +1,1972 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
+<meta name="theme-color" content="#0b1f33">
+<meta name="description" content="Learn to strum and sing your own songs in 15 minutes a day.">
+<title>Riyaz: guitar and singing practice</title>
+<link rel="icon" href="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCA1MTIgNTEyIj48cmVjdCB3aWR0aD0iNTEyIiBoZWlnaHQ9IjUxMiIgcng9Ijk2IiBmaWxsPSIjMGIxZjMzIi8+PGNpcmNsZSBjeD0iMjU2IiBjeT0iMjU2IiByPSIxNTAiIGZpbGw9Im5vbmUiIHN0cm9rZT0iIzE0YjhhNiIgc3Ryb2tlLXdpZHRoPSIyOCIvPjxwYXRoIGQ9Ik0xOTYgMzMwVjE3MGwxNTAgNDB2MTIwIiBmaWxsPSJub25lIiBzdHJva2U9IiM1ZWVhZDQiIHN0cm9rZS13aWR0aD0iMjYiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCIgc3Ryb2tlLWxpbmVqb2luPSJyb3VuZCIvPjxjaXJjbGUgY3g9IjE3NiIgY3k9IjMzNCIgcj0iMzAiIGZpbGw9IiM1ZWVhZDQiLz48Y2lyY2xlIGN4PSIzMjYiIGN5PSIzMzQiIHI9IjMwIiBmaWxsPSIjNWVlYWQ0Ii8+PC9zdmc+Cg==" type="image/svg+xml">
+<style>
+:root{--bg:#0b1f33;--panel:#11294a;--panel2:#0e2340;--line:#1e3a5f;--teal:#14b8a6;--teal2:#5eead4;--amber:#f59e0b;--red:#ef4444;--green:#22c55e;--txt:#e6f0fa;--mut:#8aa4c0;--r:14px}
+*{box-sizing:border-box}
+html,body{margin:0;background:var(--bg);color:var(--txt);font:15px/1.45 system-ui,-apple-system,"Segoe UI",Roboto,"Noto Sans","Noto Sans Devanagari",sans-serif;-webkit-tap-highlight-color:transparent}
+body{min-height:100vh;padding-bottom:calc(72px + env(safe-area-inset-bottom))}
+a{color:var(--teal2)}
+.top{position:sticky;top:0;z-index:5;display:flex;align-items:center;gap:10px;padding:10px 14px;background:rgba(11,31,51,.96);border-bottom:1px solid var(--line);backdrop-filter:blur(6px)}
+.brand{font-weight:800;font-size:18px;letter-spacing:.3px;color:var(--txt);text-decoration:none}
+.brand b{color:var(--teal)}
+.top .sp{flex:1}
+.iconbtn{background:none;border:1px solid var(--line);color:var(--mut);border-radius:10px;padding:6px 10px;font:inherit;text-decoration:none}
+main{max-width:720px;margin:auto;padding:12px 14px}
+.tabs{position:fixed;bottom:0;left:0;right:0;z-index:6;display:flex;background:#081829;border-top:1px solid var(--line);padding-bottom:env(safe-area-inset-bottom)}
+.tabs a{flex:1;text-align:center;padding:9px 2px 10px;color:var(--mut);text-decoration:none;font-size:12px;font-weight:600}
+.tabs a .ic{display:block;font-size:19px;line-height:1.1;margin-bottom:1px}
+.tabs a.on{color:var(--teal2)}
+h2{font-size:20px;margin:6px 0 10px}
+h3{font-size:16px;margin:4px 0 8px}
+.card{background:var(--panel);border:1px solid var(--line);border-radius:var(--r);padding:14px;margin:10px 0}
+.card.hl{border-color:var(--teal)}
+.mut{color:var(--mut)}.small{font-size:13px}.tiny{font-size:11.5px}
+.ok{color:var(--teal2)}.bad{color:#fca5a5}.warn{color:#fcd34d}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+.row.between{justify-content:space-between}
+.grow{flex:1}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:6px;font:inherit;font-weight:600;color:var(--txt);background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:11px 14px;cursor:pointer;text-decoration:none;min-height:44px}
+.btn:active{transform:scale(.98)}
+.btn.primary{background:var(--teal);border-color:var(--teal);color:#05221f}
+.btn.danger{background:#3a1515;border-color:#7f1d1d;color:#fecaca}
+.btn.ghost{background:none}
+.btn.sm{padding:6px 10px;min-height:34px;font-size:13px;border-radius:9px}
+.btn.block{width:100%}
+.btn[disabled]{opacity:.45;pointer-events:none}
+input,select,textarea{font:inherit;color:var(--txt);background:var(--panel2);border:1px solid var(--line);border-radius:10px;padding:10px}
+textarea{width:100%;min-height:260px;font:13px/1.4 ui-monospace,Menlo,Consolas,monospace}
+label.f{display:block;margin:10px 0 4px;font-size:13px;color:var(--mut)}
+input[type=text]{width:100%}
+.seg{display:flex;background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:3px;margin:4px 0 10px}
+.seg a,.seg button{flex:1;text-align:center;padding:8px 4px;border-radius:9px;color:var(--mut);text-decoration:none;font:inherit;font-weight:600;font-size:14px;background:none;border:0}
+.seg .on{background:var(--teal);color:#05221f}
+.pill{display:inline-block;font-size:12px;padding:3px 9px;border-radius:99px;background:var(--line);color:var(--mut);white-space:nowrap}
+.pill.ok{background:#0f4f4a;color:var(--teal2)}.pill.warn{background:#4a3a10;color:#fcd34d}.pill.bad{background:#4c1d1d;color:#fca5a5}
+.big{font-size:44px;font-weight:800;line-height:1.05}
+.kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:8px}
+.kpi{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:10px;text-align:center}
+.kpi .v{font-size:22px;font-weight:800}
+.kpi .l{font-size:11.5px;color:var(--mut)}
+.block{display:flex;align-items:center;gap:10px;padding:10px 0;border-top:1px solid var(--line)}
+.block:first-of-type{border-top:0}
+.block .chk{width:26px;height:26px;border-radius:50%;border:2px solid var(--line);display:flex;align-items:center;justify-content:center;font-size:14px;flex:none}
+.block .chk.done{background:var(--teal);border-color:var(--teal);color:#05221f}
+.block .t{font-weight:700}
+.focus{font-size:11px;color:#fcd34d;margin-left:6px}
+.steps{list-style:none;padding:0;margin:0}
+.steps li{display:flex;gap:10px;align-items:center;padding:8px 0;border-top:1px solid var(--line)}
+.steps li:first-child{border-top:0}
+.banner{position:sticky;top:53px;z-index:4;background:#0f4f4a;color:var(--teal2);border-radius:12px;padding:8px 12px;margin:0 0 8px;display:flex;align-items:center;gap:8px;font-weight:600;font-size:14px}
+.banner.over{background:#4a3a10;color:#fcd34d}
+.readout{text-align:center}
+.note{font-size:58px;font-weight:800;line-height:1}
+.meter{position:relative;height:22px;margin:10px 4px 2px;border-radius:8px;background:linear-gradient(90deg,#4c1d1d 0%,#4a3a10 25%,#0f4f4a 40%,#0f4f4a 60%,#4a3a10 75%,#4c1d1d 100%)}
+.meter .mid{position:absolute;left:50%;top:-3px;bottom:-3px;width:2px;background:#cfe3f7;transform:translateX(-1px)}
+.needle{position:absolute;top:-5px;bottom:-5px;width:6px;border-radius:3px;background:#fff;left:50%;transform:translateX(-3px);opacity:.25}
+.scale{display:flex;justify-content:space-between;font-size:11px;color:var(--mut);margin:0 4px}
+canvas.trace{width:100%;height:220px;display:block;background:#0a1a2c;border-radius:12px;border:1px solid var(--line)}
+.diagrams{display:grid;grid-template-columns:repeat(auto-fill,minmax(96px,1fr));gap:8px}
+.diag{background:var(--panel2);border:1px solid var(--line);border-radius:12px;padding:6px 4px;text-align:center;cursor:pointer;color:var(--txt);font:inherit}
+.diag .n{font-weight:800;font-size:15px}
+.diag.hard{border-color:#7a5a12}
+.sheet{font:14px/1.35 ui-monospace,Menlo,Consolas,"Noto Sans Mono",monospace;white-space:pre;overflow-x:auto;background:#0a1a2c;border:1px solid var(--line);border-radius:12px;padding:12px}
+.sheet .ch{color:var(--teal2);font-weight:700}
+.sheet .ch.cur{background:var(--teal);color:#05221f;border-radius:4px}
+.sheet .hd{color:#fcd34d;font-weight:700}
+.slots{display:grid;grid-template-columns:repeat(8,1fr);gap:4px;margin:8px 0}
+.slot{text-align:center;padding:8px 0;border-radius:8px;background:var(--panel2);border:1px solid var(--line);font-weight:800;color:var(--mut)}
+.slot.hit{color:var(--txt)}
+.slot.cur{background:var(--teal);color:#05221f;border-color:var(--teal)}
+.slot .c{display:block;font-size:10px;font-weight:600;opacity:.8}
+.pad{width:100%;height:170px;border-radius:18px;border:2px dashed var(--teal);background:#0a2a33;color:var(--teal2);font:inherit;font-size:20px;font-weight:800;touch-action:manipulation;user-select:none;-webkit-user-select:none}
+.pad:active,.pad.flash{background:#0f4f4a}
+.timer{font-size:72px;font-weight:800;text-align:center;font-variant-numeric:tabular-nums;color:var(--teal2)}
+.counter{display:flex;align-items:center;justify-content:center;gap:14px}
+.counter .val{font-size:48px;font-weight:800;min-width:90px;text-align:center}
+.ladder{display:grid;grid-template-columns:repeat(4,1fr);gap:6px}
+.rung{border:1px solid var(--line);background:var(--panel2);border-radius:10px;padding:8px 4px;text-align:center;font-size:12px;color:var(--mut);cursor:pointer;font:inherit;font-size:12px}
+.rung b{display:block;font-size:15px;color:var(--txt)}
+.rung.on{border-color:var(--teal);background:#0f3a3a}
+.rung.locked{opacity:.45}
+.rung.passed b{color:var(--teal2)}
+.now{display:flex;gap:12px;align-items:center}
+.now .cur{font-size:50px;font-weight:800;color:var(--teal2);min-width:110px}
+.now .nx{color:var(--mut)}
+.spark{width:100%;height:60px;display:block}
+.cal{display:grid;grid-template-columns:repeat(7,1fr);gap:4px}
+.cal span{aspect-ratio:1;border-radius:6px;background:var(--panel2);border:1px solid var(--line)}
+.cal span.on{background:var(--teal);border-color:var(--teal)}
+.cal span.today{outline:2px solid var(--teal2)}
+table.t{width:100%;border-collapse:collapse;font-size:13px}
+table.t td,table.t th{padding:6px 4px;border-bottom:1px solid var(--line);text-align:left}
+table.t th{color:var(--mut);font-weight:600}
+.progress{height:6px;background:var(--line);border-radius:3px;overflow:hidden;margin:8px 0}
+.progress>i{display:block;height:100%;width:0;background:var(--teal);transition:width .1s linear}
+.toast{position:fixed;left:50%;bottom:calc(84px + env(safe-area-inset-bottom));transform:translateX(-50%);background:#0f4f4a;color:var(--teal2);padding:10px 16px;border-radius:12px;font-weight:600;z-index:20;max-width:90vw;text-align:center}
+.empty{text-align:center;padding:24px 10px;color:var(--mut)}
+.chips{display:flex;gap:6px;flex-wrap:wrap}
+.chip{border:1px solid var(--line);background:var(--panel2);border-radius:99px;padding:6px 12px;font:inherit;font-size:13px;color:var(--txt);cursor:pointer}
+.chip.on{background:var(--teal);color:#05221f;border-color:var(--teal);font-weight:700}
+.hidden{display:none!important}
+@media (min-width:600px){.big{font-size:52px}}
+label.cbx{display:flex;align-items:center;gap:8px;flex-wrap:nowrap;cursor:pointer}
+label.cbx input{width:20px;height:20px;flex:none;margin:0;accent-color:#14b8a6}
+.btn{white-space:nowrap}
+
+</style>
+</head>
+<body>
+<header class="top">
+  <a class="brand" href="#/today">Riy<b>a</b>z</a>
+  <span class="sp"></span>
+  <a class="iconbtn" href="#/settings" aria-label="Settings">⚙ Settings</a>
+</header>
+<main id="view"><div class="empty">Loading…</div></main>
+<nav class="tabs" aria-label="Main">
+  <a href="#/today" data-tab="today"><span class="ic">◉</span>Today</a>
+  <a href="#/voice" data-tab="voice"><span class="ic">♪</span>Voice</a>
+  <a href="#/guitar" data-tab="guitar"><span class="ic">♯</span>Guitar</a>
+  <a href="#/songs" data-tab="songs"><span class="ic">≡</span>Songs</a>
+  <a href="#/progress" data-tab="progress"><span class="ic">↗</span>Progress</a>
+</nav>
+<noscript><p style="padding:20px">Riyaz needs JavaScript.</p></noscript>
+<script>
+/* Riyaz core: pure logic, no DOM. Works in the browser (window.Core) and in Node (require). */
+(function (root, factory) {
+  const C = factory();
+  if (typeof module === 'object' && module.exports) module.exports = C;
+  else root.Core = C;
+})(typeof self !== 'undefined' ? self : this, function () {
+  'use strict';
+
+  // ---------------------------------------------------------------- notes
+  const SHARP = ['C', 'C#', 'D', 'D#', 'E', 'F', 'F#', 'G', 'G#', 'A', 'A#', 'B'];
+  const FLAT = ['C', 'Db', 'D', 'Eb', 'E', 'F', 'Gb', 'G', 'Ab', 'A', 'Bb', 'B'];
+  const SHAPE = ['C', 'C#', 'D', 'Eb', 'E', 'F', 'F#', 'G', 'G#', 'A', 'Bb', 'B'];
+  const LETTER = { C: 0, D: 2, E: 4, F: 5, G: 7, A: 9, B: 11 };
+  const mod = (n, m) => ((n % m) + m) % m;
+
+  function pcOf(name) {
+    const m = /^([A-Ga-g])([#b♯♭]?)$/.exec(name);
+    if (!m) return null;
+    let p = LETTER[m[1].toUpperCase()];
+    if (m[2] === '#' || m[2] === '♯') p++;
+    else if (m[2] === 'b' || m[2] === '♭') p--;
+    return mod(p, 12);
+  }
+  const midiToFreq = (m, a4 = 440) => a4 * Math.pow(2, (m - 69) / 12);
+  const freqToMidi = (f, a4 = 440) => 69 + 12 * Math.log2(f / a4);
+  function noteName(m, flats) {
+    const r = Math.round(m);
+    return (flats ? FLAT : SHARP)[mod(r, 12)] + (Math.floor(r / 12) - 1);
+  }
+  function parseNote(s) {
+    const m = /^([A-Ga-g])([#b]?)(-?\d)$/.exec(String(s).trim());
+    if (!m) return null;
+    return LETTER[m[1].toUpperCase()] + (m[2] === '#' ? 1 : m[2] === 'b' ? -1 : 0) + (parseInt(m[3], 10) + 1) * 12;
+  }
+  const median = (a) => {
+    if (!a.length) return NaN;
+    const s = [...a].sort((x, y) => x - y), k = s.length >> 1;
+    return s.length % 2 ? s[k] : (s[k - 1] + s[k]) / 2;
+  };
+  const foldCents = (c) => mod(c + 600, 1200) - 600;
+
+  // ---------------------------------------------------------------- pitch (YIN)
+  function yin(x, sr, thr = 0.15, minF = 60, maxF = 1200) {
+    const tauMin = Math.max(2, Math.floor(sr / maxF));
+    const tauMax = Math.min(Math.floor(sr / minF), Math.floor(x.length / 2));
+    const W = x.length - tauMax - 1;
+    if (W < 16) return null;
+    const d = new Float32Array(tauMax + 2);
+    for (let tau = 1; tau <= tauMax + 1; tau++) {
+      let s = 0;
+      for (let j = 0; j < W; j++) { const v = x[j] - x[j + tau]; s += v * v; }
+      d[tau] = s;
+    }
+    d[0] = 1;
+    let run = 0;
+    for (let tau = 1; tau <= tauMax + 1; tau++) { run += d[tau]; d[tau] = run > 0 ? d[tau] * tau / run : 1; }
+    let tau = -1;
+    for (let t = tauMin; t <= tauMax; t++) {
+      if (d[t] < thr) { while (t + 1 <= tauMax && d[t + 1] < d[t]) t++; tau = t; break; }
+    }
+    if (tau < 0) return null;
+    let bt = tau;
+    if (tau > 1 && tau <= tauMax) {
+      const a = d[tau - 1], b = d[tau], c = d[tau + 1], den = a + c - 2 * b;
+      if (den > 0) bt = tau + (a - c) / (2 * den);
+    }
+    return { f: sr / bt, clarity: 1 - d[tau] };
+  }
+  function rmsDb(x) {
+    let s = 0;
+    for (let i = 0; i < x.length; i++) s += x[i] * x[i];
+    return 20 * Math.log10(Math.sqrt(s / x.length) + 1e-12);
+  }
+
+  // ---------------------------------------------------------------- chords
+  const QUAL = {
+    '': '', maj: '', M: '',
+    maj7: 'maj7', M7: 'maj7', 'Δ': 'maj7', 'Δ7': 'maj7', maj9: 'maj9',
+    m: 'm', mi: 'm', min: 'm', '-': 'm',
+    m7: 'm7', mi7: 'm7', min7: 'm7', '-7': 'm7', m9: 'm9', m11: 'm11', m6: 'm6',
+    madd9: 'madd9', 'm(add9)': 'madd9', mmaj7: 'mmaj7', 'm(maj7)': 'mmaj7',
+    m7b5: 'm7b5', 'm7(b5)': 'm7b5', 'ø': 'm7b5', 'ø7': 'm7b5',
+    dim: 'dim', '°': 'dim', dim7: 'dim7', '°7': 'dim7',
+    aug: 'aug', '+': 'aug',
+    sus: 'sus4', sus4: 'sus4', sus2: 'sus2', '7sus4': '7sus4', '7sus': '7sus4', '7sus2': '7sus2',
+    add9: 'add9', '(add9)': 'add9', add2: 'add9', add11: 'add11', add4: 'add11',
+    '6': '6', '6/9': '6/9', '69': '6/9', '7': '7', '9': '9', '11': '11', '13': '13', '5': '5',
+    '7b9': '7', '7#9': '7', '7#5': 'aug', '7b5': '7',
+  };
+  const MINORISH = new Set(['m', 'm7', 'm9', 'm11', 'm6', 'madd9', 'mmaj7']);
+  const DIMISH = new Set(['dim', 'dim7', 'm7b5']);
+
+  function parseChord(tok) {
+    if (!tok) return null;
+    const t = String(tok).trim().replace(/[*,.;!?]+$/, '');
+    const m = /^([A-G][#b♯♭]?)([^/]*)(?:\/([A-G][#b♯♭]?))?$/.exec(t);
+    if (!m) return null;
+    if (!(m[2] in QUAL)) return null;
+    const root = pcOf(m[1]);
+    const bass = m[3] ? pcOf(m[3]) : null;
+    if (root === null) return null;
+    return { root, q: QUAL[m[2]], bass, src: t, flat: /b|♭/.test(m[1].slice(1)) };
+  }
+  function triadClass(q) { return DIMISH.has(q) ? 'd' : MINORISH.has(q) ? 'm' : 'M'; }
+  function transposeChord(c, k) {
+    return { ...c, root: mod(c.root + k, 12), bass: c.bass === null ? null : mod(c.bass + k, 12) };
+  }
+  const SIMPLE = {
+    maj9: 'maj7', '9': '7', '11': '7', '13': '7', m9: 'm7', m11: 'm7', madd9: 'm', mmaj7: 'm',
+    add11: '', '6/9': '', '6': '', m6: 'm', '7sus2': 'sus2', dim7: 'dim', '5': '',
+  };
+  function simplifyChord(c) {
+    return { ...c, q: c.q in SIMPLE ? SIMPLE[c.q] : c.q, bass: null };
+  }
+  function chordName(c, style = 'sharp') {
+    const names = style === 'flat' ? FLAT : style === 'shape' ? SHAPE : SHARP;
+    let s = names[c.root] + c.q;
+    if (c.bass !== null && c.bass !== undefined) s += '/' + names[c.bass];
+    return s;
+  }
+
+  // Guitar voicings, low E -> high E. 'x' = muted. Numbers = absolute frets.
+  const VOICING = {
+    C: 'x32010', D: 'xx0232', E: '022100', G: '320003', A: 'x02220',
+    Am: 'x02210', Em: '022000', Dm: 'xx0231',
+    E7: '020100', A7: 'x02020', D7: 'xx0212', G7: '320001', C7: 'x32310', B7: 'x21202',
+    Am7: 'x02010', Em7: '020000', Dm7: 'xx0211', Bm7: 'x20202',
+    Cmaj7: 'x32000', Fmaj7: 'xx3210', Amaj7: 'x02120', Dmaj7: 'xx0222', Gmaj7: '320002', Emaj7: '021100',
+    Dsus2: 'xx0230', Dsus4: 'xx0233', Asus2: 'x02200', Asus4: 'x02230', Esus4: '022200',
+    Cadd9: 'x32030', Gsus4: '330013', Csus2: 'x30013',
+    F: 'xx3211', Bm: 'x24432', 'F#m': '244222', B: 'x24442', Fm: '133111',
+    Bdim: 'x2343x', 'C#dim': 'x4565x', Adim: 'x0121x', Ddim: 'xx0131',
+  };
+  const COST = {
+    C: 1, D: 1, E: 1, G: 1, A: 1, Am: 1, Em: 1, Dm: 1.2,
+    E7: 1.1, A7: 1.1, D7: 1.3, G7: 1.3, C7: 1.5, B7: 1.7, Am7: 1.1, Em7: 1, Dm7: 1.4, Bm7: 2.2,
+    Cmaj7: 1.1, Fmaj7: 1.4, Amaj7: 1.4, Dmaj7: 1.4, Gmaj7: 1.4, Emaj7: 1.6,
+    Dsus2: 1.2, Dsus4: 1.2, Asus2: 1.1, Asus4: 1.2, Esus4: 1.2, Cadd9: 1.2, Gsus4: 1.6, Csus2: 1.8,
+    F: 2.6, Bm: 3, 'F#m': 3.2, B: 3.4, Fm: 3.4,
+    Bdim: 3, 'C#dim': 3.2, Adim: 2.6, Ddim: 2.8,
+  };
+  const BARRE_E = { '': [0, 2, 2, 1, 0, 0], m: [0, 2, 2, 0, 0, 0], '7': [0, 2, 0, 1, 0, 0], m7: [0, 2, 0, 0, 0, 0], sus4: [0, 2, 2, 2, 0, 0] };
+  const BARRE_A = { '': [null, 0, 2, 2, 2, 0], m: [null, 0, 2, 2, 1, 0], '7': [null, 0, 2, 0, 2, 0], m7: [null, 0, 2, 0, 1, 0], sus2: [null, 0, 2, 2, 0, 0], sus4: [null, 0, 2, 2, 3, 0], maj7: [null, 0, 2, 1, 2, 0] };
+
+  function shapeName(c) { return chordName({ ...c, bass: null }, 'shape'); }
+  function shapeCost(c) {
+    const n = shapeName(c);
+    if (n in COST) return COST[n];
+    if (BARRE_E[c.q] || BARRE_A[c.q]) return c.q === '' || c.q === 'm' ? 4 : 3.8;
+    return 4.6;
+  }
+  /** Returns {frets:[6 values, null=muted], name, barre:boolean} or null. */
+  function voicing(c) {
+    const n = shapeName(c);
+    if (VOICING[n]) return { name: n, frets: VOICING[n].split('').map((v) => (v === 'x' ? null : +v)), barre: COST[n] >= 2.6 };
+    const opts = [];
+    if (BARRE_E[c.q]) { const r = mod(c.root - 4, 12) || 12; opts.push(BARRE_E[c.q].map((v) => (v === null ? null : v + r))); }
+    if (BARRE_A[c.q]) { const r = mod(c.root - 9, 12) || 12; opts.push(BARRE_A[c.q].map((v) => (v === null ? null : v + r))); }
+    if (!opts.length) return null;
+    opts.sort((a, b) => Math.min(...a.filter((v) => v !== null)) - Math.min(...b.filter((v) => v !== null)));
+    return { name: n, frets: opts[0], barre: true };
+  }
+
+  // ---------------------------------------------------------------- chord sheets
+  const FILLER = /^(\|+|\|\|:|:\|\||-+|\/+|x\d+|\d+x|\(x?\d+x?\)|N\.?C\.?|%|\.+|\(|\)|\[|\])$/i;
+  const SECTION = /^\s*[\[(]?\s*(intro|verse|chorus|pre-?chorus|bridge|outro|interlude|hook|refrain|antara|mukhda|sthayi|solo|instrumental|coda|tag|ending|break|riff)\b\s*(\d+[a-z]?)?\s*[\])]?\s*:?\s*(.*)$/i;
+  const ONLY_FILLER = (s) => s.trim().split(/\s+/).every((t) => FILLER.test(t));
+
+  function chordLineItems(line) {
+    const items = [];
+    let chords = 0, other = 0;
+    const re = /\S+/g;
+    let m;
+    while ((m = re.exec(line))) {
+      let tok = m[0], pos = m.index;
+      const stripped = tok.replace(/^\(+/, '').replace(/\)+$/, '');
+      const c = parseChord(stripped);
+      if (c) { items.push({ pos: pos + tok.indexOf(stripped), chord: c }); chords++; }
+      else if (FILLER.test(tok)) { /* ignore */ }
+      else other++;
+    }
+    return chords > 0 && other === 0 ? items : null;
+  }
+
+  function parseInline(line) {
+    // ChordPro style: [C]Lyrics [G]more
+    const re = /\[([^\]]+)\]/g;
+    let m, text = '', last = 0, items = [], found = false;
+    while ((m = re.exec(line))) {
+      const c = parseChord(m[1]);
+      text += line.slice(last, m.index);
+      if (c) { items.push({ pos: text.length, chord: c }); found = true; }
+      else text += m[0];
+      last = re.lastIndex;
+    }
+    text += line.slice(last);
+    return found ? { items, text } : null;
+  }
+
+  function parseSheet(raw) {
+    const src = String(raw || '').replace(/\r\n?/g, '\n').replace(/\t/g, '    ').split('\n');
+    const out = [];
+    let title = '';
+    for (let i = 0; i < src.length; i++) {
+      const line = src[i].replace(/\s+$/, '');
+      if (!line.trim()) { out.push({ type: 'blank' }); continue; }
+      const dir = /^\s*\{\s*(\w+)\s*(?::\s*(.*?))?\s*\}\s*$/.exec(line);
+      if (dir) {
+        const k = dir[1].toLowerCase();
+        if ((k === 'title' || k === 't') && dir[2]) title = dir[2];
+        else if (['c', 'comment', 'soc', 'start_of_chorus', 'sov', 'start_of_verse'].includes(k)) out.push({ type: 'header', text: dir[2] || (k.includes('chorus') ? 'Chorus' : k.includes('verse') ? 'Verse' : '') });
+        continue;
+      }
+      const sec = SECTION.exec(line);
+      if (sec) {
+        const label = (sec[1] + (sec[2] ? ' ' + sec[2] : '')).trim();
+        const rest = sec[3] || '';
+        if (!rest.trim() || ONLY_FILLER(rest)) { out.push({ type: 'header', text: (label + ' ' + rest.trim()).trim() }); continue; }
+        const restItems = chordLineItems(rest);
+        const isBracketed = /^\s*[\[(]/.test(line) || /:/.test(line.slice(0, line.length - rest.length));
+        if (restItems && isBracketed) {
+          out.push({ type: 'header', text: label });
+          out.push({ type: 'chords', items: restItems });
+          continue;
+        }
+      }
+      const inline = parseInline(line);
+      if (inline) { out.push({ type: 'pair', items: inline.items, text: inline.text }); continue; }
+      const items = chordLineItems(line);
+      if (items) {
+        const next = src[i + 1] !== undefined ? src[i + 1].replace(/\s+$/, '') : '';
+        const nextIsLyric = next.trim() && !chordLineItems(next) && !SECTION.exec(next) && !parseInline(next) && !/^\s*\{/.test(next);
+        if (nextIsLyric) { out.push({ type: 'pair', items, text: next }); i++; }
+        else out.push({ type: 'chords', items });
+        continue;
+      }
+      out.push({ type: 'lyric', text: line });
+    }
+    while (out.length && out[out.length - 1].type === 'blank') out.pop();
+    while (out.length && out[0].type === 'blank') out.shift();
+    const seq = [];
+    out.forEach((ln, li) => (ln.items || []).forEach((it, ii) => seq.push({ chord: it.chord, line: li, item: ii })));
+    return { title, lines: out, seq, chords: seq.map((s) => s.chord) };
+  }
+
+  /** Re-renders a chord row so names never collide after transposition. */
+  function layoutChordRow(items, nameFn) {
+    let s = '', cursor = 0;
+    const spans = [];
+    items.forEach((it, idx) => {
+      const name = nameFn(it.chord, idx);
+      const at = Math.max(it.pos, cursor === 0 ? 0 : cursor + 1);
+      s += ' '.repeat(at - s.length) + name;
+      spans.push({ start: at, end: at + name.length, idx });
+      cursor = s.length;
+    });
+    return { text: s, spans };
+  }
+
+  // ---------------------------------------------------------------- keys
+  const MAJOR_SET = { 0: 'M', 2: 'm', 4: 'm', 5: 'M', 7: 'M', 9: 'm', 11: 'd', 10: 'M' };
+  const MINOR_SET = { 0: 'm', 2: 'd', 3: 'M', 5: 'm', 7: 'mM', 8: 'M', 10: 'M' };
+  function estimateKey(chords) {
+    if (!chords || !chords.length) return null;
+    let best = null;
+    const first = chords[0], last = chords[chords.length - 1];
+    for (let tonic = 0; tonic < 12; tonic++) {
+      for (const mode of ['major', 'minor']) {
+        const set = mode === 'major' ? MAJOR_SET : MINOR_SET;
+        let s = 0;
+        for (const c of chords) {
+          const deg = mod(c.root - tonic, 12), tc = triadClass(c.q), want = set[deg];
+          if (want && want.includes(tc)) s += 1;
+          else s -= 0.6;
+          if (deg === 7 && c.q === '7') s += 0.3;
+        }
+        const tonicQ = mode === 'major' ? 'M' : 'm';
+        if (first.root === tonic) s += triadClass(first.q) === tonicQ ? 2.5 : 0.5;
+        if (last.root === tonic) s += triadClass(last.q) === tonicQ ? 1.5 : 0.3;
+        if (mode === 'minor') s -= 0.25;
+        if (!best || s > best.s) best = { tonic, mode, s };
+      }
+    }
+    return { tonic: best.tonic, mode: best.mode, name: keyName(best.tonic, best.mode) };
+  }
+  function usesFlats(tonic, mode) {
+    const majorPc = mode === 'minor' ? mod(tonic + 3, 12) : tonic;
+    return [5, 10, 3, 8, 1].includes(majorPc);
+  }
+  function keyName(tonic, mode) {
+    const n = (usesFlats(tonic, mode) ? FLAT : SHARP)[tonic];
+    return n + (mode === 'minor' ? 'm' : '');
+  }
+
+  // Assumed melody span relative to the song's tonic, in semitones (user can change it).
+  const SPANS = { narrow: [-3, 7], typical: [-5, 9], wide: [-7, 10] };
+
+  /** Finds the key shift (-6..+5) and tonic octave that put the assumed melody inside the user's range. */
+  function fitKey(origTonic, range, spanId = 'typical') {
+    const span = SPANS[spanId] || SPANS.typical;
+    const mid = (range.lo + range.hi) / 2;
+    let best = null;
+    for (let shift = -6; shift <= 5; shift++) {
+      const pc = mod(origTonic + shift, 12);
+      for (let t = range.lo - 24; t <= range.hi + 24; t++) {
+        if (mod(t, 12) !== pc) continue;
+        const a = t + span[0], b = t + span[1];
+        const over = Math.max(0, range.lo - a) + Math.max(0, b - range.hi);
+        const cost = over * 10 + Math.abs((a + b) / 2 - mid) + Math.abs(shift) * 0.35;
+        if (!best || cost < best.cost) best = { shift, tonicMidi: t, low: a, high: b, overflow: over, cost };
+      }
+    }
+    return best;
+  }
+  /** For a manual shift: best octave and overflow for that shift. */
+  function placeKey(origTonic, shift, range, spanId = 'typical') {
+    const span = SPANS[spanId] || SPANS.typical;
+    const pc = mod(origTonic + shift, 12), mid = (range.lo + range.hi) / 2;
+    let best = null;
+    for (let t = range.lo - 24; t <= range.hi + 24; t++) {
+      if (mod(t, 12) !== pc) continue;
+      const a = t + span[0], b = t + span[1];
+      const over = Math.max(0, range.lo - a) + Math.max(0, b - range.hi);
+      const cost = over * 10 + Math.abs((a + b) / 2 - mid);
+      if (!best || cost < best.cost) best = { shift, tonicMidi: t, low: a, high: b, overflow: over, cost };
+    }
+    return best;
+  }
+
+  /** Picks the capo that makes the (already key-shifted) chords easiest to play. */
+  function bestCapo(chords, opts = {}) {
+    const simplify = opts.simplify !== false, maxCapo = opts.maxCapo ?? 7;
+    const results = [];
+    for (let capo = 0; capo <= maxCapo; capo++) {
+      let total = 0;
+      const names = [];
+      for (const c of chords) {
+        const s = transposeChord(simplify ? simplifyChord(c) : c, -capo);
+        total += shapeCost(s);
+        const n = shapeName(s);
+        if (!names.includes(n)) names.push(n);
+      }
+      const avg = chords.length ? total / chords.length : 0;
+      const cost = avg + (capo > 5 ? 0.15 * (capo - 5) : 0) + capo * 0.01;
+      results.push({ capo, cost: +cost.toFixed(3), shapes: names, hard: names.filter((n) => (COST[n] || 4) >= 2.6) });
+    }
+    const sorted = [...results].sort((a, b) => a.cost - b.cost);
+    return { ...sorted[0], alternatives: sorted.slice(0, 4) };
+  }
+
+  /** Full song arrangement for a user. */
+  function arrange(song, range) {
+    const sheet = parseSheet(song.raw);
+    const key = song.keyOverride ? { ...song.keyOverride, name: keyName(song.keyOverride.tonic, song.keyOverride.mode) } : estimateKey(sheet.chords);
+    if (!key) return { sheet, key: null, empty: true };
+    let fit = null, shift = 0;
+    if (typeof song.shift === 'number') {
+      shift = song.shift;
+      fit = range ? placeKey(key.tonic, shift, range, song.span) : null;
+    } else if (range) {
+      fit = fitKey(key.tonic, range, song.span);
+      shift = fit.shift;
+    }
+    const concert = sheet.chords.map((c) => transposeChord(c, shift));
+    const simplify = song.simplify !== false;
+    const auto = bestCapo(concert, { simplify });
+    const capo = typeof song.capo === 'number' ? song.capo : auto.capo;
+    const shapeOf = (c) => transposeChord(simplify ? simplifyChord(c) : c, shift - capo);
+    const newKey = { tonic: mod(key.tonic + shift, 12), mode: key.mode };
+    newKey.name = keyName(newKey.tonic, newKey.mode);
+    const flats = usesFlats(newKey.tonic, newKey.mode);
+    const shapes = [];
+    sheet.chords.forEach((c) => { const n = shapeName(shapeOf(c)); if (!shapes.includes(n)) shapes.push(n); });
+    return {
+      sheet, key, newKey, shift, fit, capo, auto, simplify, shapes,
+      hard: shapes.filter((n) => (COST[n] || shapeCost(parseChord(n) || { root: 0, q: 'zz' })) >= 2.6),
+      shapeOf, concertName: (c) => chordName(transposeChord(c, shift), flats ? 'flat' : 'sharp'),
+      shapeNameOf: (c) => shapeName(shapeOf(c)),
+      alternatives: auto.alternatives,
+    };
+  }
+
+  /** Chord-change pairs in a shape sequence, most frequent first. */
+  function changePairs(names) {
+    const counts = {};
+    for (let i = 1; i < names.length; i++) {
+      if (names[i] === names[i - 1]) continue;
+      const k = pairKey(names[i - 1], names[i]);
+      counts[k] = (counts[k] || 0) + 1;
+    }
+    return Object.entries(counts).sort((a, b) => b[1] - a[1]).map(([k, n]) => ({ key: k, a: k.split('|')[0], b: k.split('|')[1], count: n }));
+  }
+  const pairKey = (a, b) => [a, b].sort().join('|');
+  const STARTER_PAIRS = ['C|G', 'C|D', 'D|G', 'Em|G', 'C|Em', 'Am|D', 'Am|C'];
+
+  // ---------------------------------------------------------------- strumming
+  const PATTERNS = [
+    { id: 'p1', name: 'Steady downs', slots: 'D-D-D-D-', bpm: 70 },
+    { id: 'p2', name: 'Down-up eighths', slots: 'DUDUDUDU', bpm: 60 },
+    { id: 'p3', name: 'Folk (D-DU-UDU)', slots: 'D-DU-UDU', bpm: 60 },
+    { id: 'p4', name: 'Ballad (D-DUD-DU)', slots: 'D-DUD-DU', bpm: 60 },
+  ];
+  function patternHits(slots, bpm, bars, t0) {
+    const e = 60 / bpm / 2, out = [];
+    for (let b = 0; b < bars; b++) for (let i = 0; i < 8; i++) if (slots[i] !== '-') out.push({ t: t0 + (b * 8 + i) * e, dir: slots[i] });
+    return out;
+  }
+  function tapTolerance(bpm) { const e = 60 / bpm / 2 * 1000; return Math.min(70, Math.max(40, e * 0.2)); }
+  /** expected: [seconds], taps: [seconds]. Returns score 0..100 and timing stats. */
+  function scoreTaps(expected, taps, bpm) {
+    const tol = tapTolerance(bpm) / 1000;
+    const win = Math.min(0.5 * 60 / bpm / 2, 0.2);
+    const used = new Array(taps.length).fill(false);
+    let good = 0, off = 0, miss = 0;
+    const errs = [];
+    for (const t of expected) {
+      let bi = -1, bd = Infinity;
+      for (let j = 0; j < taps.length; j++) {
+        if (used[j]) continue;
+        const d = Math.abs(taps[j] - t);
+        if (d < bd) { bd = d; bi = j; }
+      }
+      if (bi >= 0 && bd <= win) {
+        used[bi] = true;
+        const err = taps[bi] - t;
+        errs.push(err * 1000);
+        if (Math.abs(err) <= tol) good++; else off++;
+      } else miss++;
+    }
+    const extras = used.filter((u) => !u).length;
+    const denom = expected.length + extras;
+    const score = denom ? Math.round((good / denom) * 100) : 0;
+    const meanAbs = errs.length ? errs.reduce((a, b) => a + Math.abs(b), 0) / errs.length : null;
+    const bias = errs.length ? median(errs) : null;
+    return { score, good, off, miss, extras, meanAbsMs: meanAbs === null ? null : Math.round(meanAbs), biasMs: bias === null ? null : Math.round(bias), tolMs: Math.round(tol * 1000) };
+  }
+  function nextTempo(bpm, score) {
+    if (score >= 85) return Math.min(160, bpm + 5);
+    if (score < 50) return Math.max(45, bpm - 5);
+    return bpm;
+  }
+
+  // ---------------------------------------------------------------- voice scoring
+  /** frames: [{t(ms), midi|null}]. Returns runs where pitch stayed within ±50 cents for at least minMs. */
+  function stableRuns(frames, minMs = 300, tolSemis = 1.0) {
+    const runs = [];
+    let i = 0;
+    while (i < frames.length) {
+      if (frames[i].midi === null) { i++; continue; }
+      let lo = frames[i].midi, hi = lo, j = i + 1;
+      while (j < frames.length && frames[j].midi !== null) {
+        const m = frames[j].midi, nlo = Math.min(lo, m), nhi = Math.max(hi, m);
+        if (nhi - nlo > tolSemis) break;
+        lo = nlo; hi = nhi; j++;
+      }
+      const dur = frames[j - 1].t - frames[i].t;
+      if (dur >= minMs) {
+        runs.push({ start: frames[i].t, end: frames[j - 1].t, midi: median(frames.slice(i, j).map((f) => f.midi)) });
+        i = j;
+      } else i++;
+    }
+    return runs;
+  }
+  function rangeFromFrames(frameSets, minMs = 300) {
+    const runs = frameSets.flatMap((f) => stableRuns(f, minMs));
+    if (!runs.length) return null;
+    const lo = Math.round(Math.min(...runs.map((r) => r.midi)));
+    const hi = Math.round(Math.max(...runs.map((r) => r.midi)));
+    return { lo, hi, span: hi - lo, runs: runs.length };
+  }
+  function scoreHold(frames, target, fold = true) {
+    if (!frames.length) return { acc: 0, voiced: 0, medianCents: null };
+    const voiced = frames.filter((f) => f.midi !== null);
+    const errs = voiced.map((f) => { const c = (f.midi - target) * 100; return fold ? foldCents(c) : c; });
+    const inTune = errs.filter((e) => Math.abs(e) <= 50).length;
+    return { acc: Math.round((inTune / frames.length) * 100), voiced: Math.round((voiced.length / frames.length) * 100), medianCents: errs.length ? Math.round(median(errs)) : null };
+  }
+  /** Notes for a pitch exercise: 1-3-5-3-1 of the key, placed inside the user's range. */
+  function exerciseNotes(tonicPc, mode, range) {
+    const third = mode === 'minor' ? 3 : 4;
+    const lo = range ? range.lo : 48, hi = range ? range.hi : 64;
+    const mid = (lo + hi) / 2;
+    let best = null;
+    for (let t = lo - 12; t <= hi; t++) {
+      if (mod(t, 12) !== tonicPc) continue;
+      const top = t + 7;
+      const fits = t >= lo && top <= hi;
+      const cost = (fits ? 0 : 100) + Math.abs(t + 3.5 - mid);
+      if (!best || cost < best.cost) best = { t, cost };
+    }
+    const t = best.t;
+    return [t, t + third, t + 7, t + third, t];
+  }
+
+  // ---------------------------------------------------------------- dates, streaks, sessions
+  const pad = (n) => String(n).padStart(2, '0');
+  function ymd(d) { d = d instanceof Date ? d : new Date(d); return d.getFullYear() + '-' + pad(d.getMonth() + 1) + '-' + pad(d.getDate()); }
+  function addDays(s, n) { const [y, m, d] = s.split('-').map(Number); const x = new Date(y, m - 1, d + n); return ymd(x); }
+  function daysBetween(a, b) { const [y1, m1, d1] = a.split('-').map(Number), [y2, m2, d2] = b.split('-').map(Number); return Math.round((Date.UTC(y2, m2 - 1, d2) - Date.UTC(y1, m1 - 1, d1)) / 86400000); }
+  /** Practice-day streak. One missed day does not break it; two in a row do. Today is pending, not missed. */
+  function streak(days, today) {
+    const set = new Set(days);
+    let d = set.has(today) ? today : addDays(today, -1), count = 0, miss = 0;
+    for (let i = 0; i < 5000; i++) {
+      if (set.has(d)) { count++; miss = 0; }
+      else { miss++; if (miss >= 2) break; }
+      d = addDays(d, -1);
+    }
+    return count;
+  }
+
+  /** Current metric levels, each normalised so 1.0 = MVP target. */
+  function metrics(state, pairs) {
+    const lastPitch = state.pitch && state.pitch.length ? state.pitch[state.pitch.length - 1].acc : null;
+    const pairList = pairs && pairs.length ? pairs : STARTER_PAIRS.map((k) => ({ key: k, a: k.split('|')[0], b: k.split('|')[1], count: 0 }));
+    const bestOf = (k) => {
+      const recent = (state.changes || []).filter((c) => c.pair === k).slice(-3);
+      return recent.length ? Math.max(...recent.map((c) => c.cpm)) : null;
+    };
+    const ranked = pairList.slice(0, 6).map((p) => ({ ...p, best: bestOf(p.key) }));
+    const untested = ranked.find((p) => p.best === null);
+    const tested = ranked.filter((p) => p.best !== null).sort((a, b) => a.best - b.best);
+    const slowest = untested || tested[0] || ranked[0];
+    const strumHist = (state.strum && state.strum.history) || [];
+    const lastStrum = strumHist.length ? strumHist[strumHist.length - 1].score : null;
+    const cpm = tested.length ? tested[0].best : null;
+    return {
+      pitch: lastPitch, changes: cpm, strum: lastStrum, slowestPair: slowest,
+      norm: {
+        pitch: lastPitch === null ? 0 : Math.min(1, lastPitch / 70),
+        changes: untested ? 0 : cpm === null ? 0 : Math.min(1, cpm / 30),
+        strum: lastStrum === null ? 0 : Math.min(1, lastStrum / 85),
+      },
+    };
+  }
+
+  function planSession(state, today, pairs) {
+    const start = state.profile && state.profile.startDate ? state.profile.startDate : today;
+    const day = daysBetween(start, today) + 1;
+    const m = metrics(state, pairs);
+    const mins = { pitch: 3, changes: 4, strum: 4, layer: 4 };
+    const order = ['pitch', 'changes', 'strum'];
+    const weakest = order.slice().sort((a, b) => m.norm[a] - m.norm[b] || order.indexOf(a) - order.indexOf(b))[0];
+    const strongest = order.slice().sort((a, b) => m.norm[b] - m.norm[a] || order.indexOf(b) - order.indexOf(a))[0];
+    if (weakest !== strongest && m.norm[weakest] < m.norm[strongest]) {
+      mins[weakest] += 2;
+      const donor = mins[strongest] - 2 >= 2 ? strongest : 'layer';
+      mins[donor] -= 2;
+    }
+    if (day <= 14 && mins.changes + mins.layer > 8) mins.layer = Math.max(2, 8 - mins.changes);
+    const why = {
+      pitch: m.pitch === null ? 'Get your first pitch score' : `Pitch accuracy ${m.pitch}% (target 70%)`,
+      changes: m.slowestPair ? (m.slowestPair.best === null ? `New pair: ${m.slowestPair.a} ↔ ${m.slowestPair.b}` : `Slowest pair ${m.slowestPair.a} ↔ ${m.slowestPair.b}: ${m.slowestPair.best}/min (target 30)`) : '',
+      strum: m.strum === null ? 'Get your first timing score' : `Timing score ${m.strum}% (target 85%)`,
+      layer: 'Next step on your song ladder',
+    };
+    const blocks = ['pitch', 'changes', 'strum', 'layer'].map((id) => ({ id, min: mins[id], why: why[id], weakest: id === weakest }));
+    return { day, blocks, weakest, total: blocks.reduce((a, b) => a + b.min, 0), metrics: m, daysToSong: Math.max(0, 21 - day) };
+  }
+
+  return {
+    SHARP, FLAT, mod, pcOf, parseNote, midiToFreq, freqToMidi, noteName, median, foldCents,
+    yin, rmsDb,
+    parseChord, chordName, transposeChord, simplifyChord, triadClass, shapeName, shapeCost, voicing, VOICING, COST,
+    parseSheet, layoutChordRow, estimateKey, keyName, usesFlats, SPANS, fitKey, placeKey, bestCapo, arrange,
+    changePairs, pairKey, STARTER_PAIRS,
+    PATTERNS, patternHits, tapTolerance, scoreTaps, nextTempo,
+    stableRuns, rangeFromFrames, scoreHold, exerciseNotes,
+    ymd, addDays, daysBetween, streak, metrics, planSession,
+  };
+});
+
+</script>
+<script>
+/* Riyaz audio engine: mic + pitch tracking, reference tones, guitar pluck synth, metronome. */
+(function (root) {
+  'use strict';
+  const C = root.Core;
+  const A = {
+    ctx: null, stream: null, src: null, analyser: null, buf: null,
+    running: false, listeners: new Set(), settings: { a4: 440, gateDb: -55, thr: 0.15, win: 2048 },
+    lastFrame: null, fps: 0, _n: 0, _t0: 0, _smooth: [],
+  };
+
+  A.ensure = async function () {
+    if (!A.ctx) {
+      const AC = root.AudioContext || root.webkitAudioContext;
+      if (!AC) throw new Error('This browser has no Web Audio support.');
+      A.ctx = new AC({ latencyHint: 'interactive' });
+    }
+    if (A.ctx.state === 'suspended') await A.ctx.resume();
+    return A.ctx;
+  };
+
+  A.micSupported = () => !!(root.isSecureContext && navigator.mediaDevices && navigator.mediaDevices.getUserMedia);
+
+  A.startMic = async function () {
+    if (A.running) return true;
+    if (!A.micSupported()) throw new Error('Microphone needs a secure page (https or localhost).');
+    await A.ensure();
+    A.stream = await navigator.mediaDevices.getUserMedia({ audio: { echoCancellation: false, noiseSuppression: false, autoGainControl: false } });
+    A.src = A.ctx.createMediaStreamSource(A.stream);
+    A.analyser = A.ctx.createAnalyser();
+    A.analyser.fftSize = A.settings.win;
+    A.analyser.smoothingTimeConstant = 0;
+    A.src.connect(A.analyser);
+    A.buf = new Float32Array(A.analyser.fftSize);
+    A.running = true; A._t0 = performance.now(); A._n = 0; A._smooth = [];
+    requestAnimationFrame(A._tick);
+    return true;
+  };
+
+  A.stopMic = function () {
+    A.running = false;
+    if (A.stream) A.stream.getTracks().forEach((t) => t.stop());
+    if (A.src) try { A.src.disconnect(); } catch (e) { /* already disconnected */ }
+    A.stream = null; A.src = null; A.lastFrame = null;
+  };
+
+  A.setWindow = function (n) {
+    A.settings.win = n;
+    if (A.analyser) { A.analyser.fftSize = n; A.buf = new Float32Array(n); }
+  };
+
+  A.onPitch = function (fn) { A.listeners.add(fn); return () => A.listeners.delete(fn); };
+
+  A._tick = function () {
+    if (!A.running) return;
+    const an = A.analyser, sr = A.ctx.sampleRate;
+    if (A.buf.length !== an.fftSize) A.buf = new Float32Array(an.fftSize);
+    an.getFloatTimeDomainData(A.buf);
+    const now = performance.now();
+    const db = C.rmsDb(A.buf);
+    let midi = null, clarity = 0;
+    if (db > A.settings.gateDb) {
+      const r = C.yin(A.buf, sr, A.settings.thr, Math.max(60, sr / (an.fftSize / 2)), 1200);
+      if (r) {
+        const m = C.freqToMidi(r.f, A.settings.a4);
+        if (m >= 28 && m <= 92) { midi = m; clarity = r.clarity; }
+      }
+    }
+    if (midi !== null) { A._smooth.push(midi); if (A._smooth.length > 3) A._smooth.shift(); } else A._smooth = [];
+    const frame = { t: now, midi, raw: midi, smooth: A._smooth.length ? C.median(A._smooth) : null, db, clarity };
+    A.lastFrame = frame;
+    A._n++;
+    if (now - A._t0 >= 1000) { A.fps = A._n * 1000 / (now - A._t0); A._n = 0; A._t0 = now; }
+    A.listeners.forEach((fn) => { try { fn(frame); } catch (e) { console.error(e); } });
+    requestAnimationFrame(A._tick);
+  };
+
+  /** Records pitch frames for `ms` milliseconds. onProgress(fraction) is optional. */
+  A.record = function (ms, onProgress) {
+    return new Promise((resolve) => {
+      const frames = [], t0 = performance.now();
+      const off = A.onPitch((f) => {
+        frames.push({ t: f.t - t0, midi: f.midi });
+        if (onProgress) onProgress(Math.min(1, (f.t - t0) / ms));
+        if (f.t - t0 >= ms) { off(); resolve(frames); }
+      });
+    });
+  };
+
+  // ---------------------------------------------------------------- output
+  A.tone = function (midi, dur = 1.2, when = 0, gain = 0.35) {
+    const ctx = A.ctx, t = ctx.currentTime + when + 0.03;
+    const o = ctx.createOscillator(), g = ctx.createGain();
+    o.type = 'triangle';
+    o.frequency.value = C.midiToFreq(midi, A.settings.a4);
+    g.gain.setValueAtTime(0, t);
+    g.gain.linearRampToValueAtTime(gain, t + 0.02);
+    g.gain.setValueAtTime(gain, t + Math.max(0.05, dur - 0.08));
+    g.gain.linearRampToValueAtTime(0, t + dur);
+    o.connect(g).connect(ctx.destination);
+    o.start(t); o.stop(t + dur + 0.05);
+    return t;
+  };
+
+  const pluckCache = new Map();
+  function pluckBuffer(freq) {
+    const key = Math.round(freq * 10);
+    if (pluckCache.has(key)) return pluckCache.get(key);
+    const sr = A.ctx.sampleRate, len = Math.floor(sr * 2.2), out = new Float32Array(len);
+    const N = Math.max(2, Math.round(sr / freq)), ring = new Float32Array(N);
+    for (let i = 0; i < N; i++) ring[i] = Math.random() * 2 - 1;
+    let idx = 0;
+    for (let i = 0; i < len; i++) {
+      const nxt = (idx + 1) % N, v = ring[idx];
+      out[i] = v;
+      ring[idx] = 0.996 * 0.5 * (v + ring[nxt]);
+      idx = nxt;
+    }
+    const b = A.ctx.createBuffer(1, len, sr);
+    b.copyToChannel(out, 0);
+    pluckCache.set(key, b);
+    return b;
+  }
+  const OPEN = [40, 45, 50, 55, 59, 64];
+  /** Strums a voicing (6 frets, null = muted) with a capo. dir 'D' = low→high. */
+  A.strum = function (frets, capo = 0, when = 0, dir = 'D', gain = 0.22) {
+    const ctx = A.ctx, t0 = ctx.currentTime + when + 0.02;
+    const order = dir === 'U' ? [5, 4, 3, 2, 1, 0] : [0, 1, 2, 3, 4, 5];
+    let k = 0;
+    order.forEach((s) => {
+      const f = frets[s];
+      if (f === null || f === undefined) return;
+      const src = ctx.createBufferSource(), g = ctx.createGain();
+      src.buffer = pluckBuffer(C.midiToFreq(OPEN[s] + f + capo, A.settings.a4));
+      g.gain.value = gain;
+      src.connect(g).connect(ctx.destination);
+      src.start(t0 + k * 0.022);
+      k++;
+    });
+  };
+
+  function click(t, accent, quiet) {
+    const ctx = A.ctx, o = ctx.createOscillator(), g = ctx.createGain();
+    o.frequency.value = accent ? 1600 : 1000;
+    const peak = quiet ? 0.08 : accent ? 0.5 : 0.3;
+    g.gain.setValueAtTime(0.0001, t);
+    g.gain.exponentialRampToValueAtTime(peak, t + 0.002);
+    g.gain.exponentialRampToValueAtTime(0.0001, t + 0.05);
+    o.connect(g).connect(ctx.destination);
+    o.start(t); o.stop(t + 0.06);
+  }
+
+  /**
+   * Metronome with look-ahead scheduling. opts: {bpm, beatsPerBar, eighths, startDelay,
+   * onEighth(i, audioTime), quietEighths}. Returns {stop, t0, bpm}. Eighth i=0 is beat 1 of bar 1.
+   */
+  A.metronome = function (opts) {
+    const ctx = A.ctx, bpm = opts.bpm, e = 60 / bpm / 2, bpb = opts.beatsPerBar || 4;
+    const t0 = ctx.currentTime + (opts.startDelay ?? 0.3);
+    let next = 0, stopped = false, scheduledAll = false;
+    const timers = [];
+    const pump = () => {
+      if (stopped || scheduledAll) return;
+      const horizon = ctx.currentTime + 0.15;
+      while (t0 + next * e < horizon) {
+        const t = t0 + next * e, isBeat = next % 2 === 0, beat = (next / 2) % bpb;
+        if (isBeat) click(t, beat === 0, false);
+        else if (opts.eighths) click(t, false, true);
+        if (opts.onEighth) {
+          const i = next, delay = Math.max(0, (t - ctx.currentTime) * 1000);
+          timers.push(setTimeout(() => !stopped && opts.onEighth(i, t), delay));
+        }
+        next++;
+        if (opts.totalEighths && next >= opts.totalEighths) { scheduledAll = true; clearInterval(iv); break; }
+      }
+    };
+    let iv = null;
+    pump();
+    if (!scheduledAll) iv = setInterval(pump, 25);
+    return {
+      t0, bpm, eighth: e,
+      stop() { stopped = true; clearInterval(iv); timers.forEach(clearTimeout); },
+    };
+  };
+
+  /** Convert an event's performance-time (ms) to AudioContext time (s), compensating output latency. */
+  A.perfToAudio = function (perfMs) {
+    const ctx = A.ctx;
+    if (ctx.getOutputTimestamp) {
+      const ts = ctx.getOutputTimestamp();
+      if (ts && ts.performanceTime > 0) return ts.contextTime + (perfMs - ts.performanceTime) / 1000;
+    }
+    return ctx.currentTime + (perfMs - performance.now()) / 1000 - (ctx.outputLatency || 0);
+  };
+
+  root.AudioEngine = A;
+})(typeof self !== 'undefined' ? self : this);
+
+</script>
+<script>
+/* Riyaz app: UI, routing, storage. Depends on Core (core.js) and AudioEngine (audio.js). */
+(function () {
+  'use strict';
+  const C = window.Core, A = window.AudioEngine;
+  const $ = (s, el = document) => el.querySelector(s);
+
+  // ================================================================ store
+  const KEY = 'riyaz.v1';
+  const defaults = () => ({
+    version: 1,
+    profile: { createdAt: Date.now(), startDate: null, range: null, latencyMs: 0, firstSongAt: null },
+    songs: [], activeSongId: null,
+    changes: [], pitch: [],
+    strum: { patternId: 'p1', bpm: Object.fromEntries(C.PATTERNS.map((p) => [p.id, p.bpm])), history: [] },
+    days: {},
+    settings: { a4: 440, gateDb: -55, thr: 0.15, win: 2048, fold: true },
+  });
+  function load() {
+    try {
+      const raw = localStorage.getItem(KEY);
+      if (!raw) return defaults();
+      const d = defaults(), s = JSON.parse(raw);
+      return { ...d, ...s, profile: { ...d.profile, ...s.profile }, strum: { ...d.strum, ...s.strum, bpm: { ...d.strum.bpm, ...(s.strum || {}).bpm } }, settings: { ...d.settings, ...s.settings } };
+    } catch (e) { console.error('load failed', e); return defaults(); }
+  }
+  let S = load();
+  function save() {
+    try { localStorage.setItem(KEY, JSON.stringify(S)); }
+    catch (e) { toast('Could not save: storage is full or blocked.'); }
+  }
+  const today = () => C.ymd(new Date());
+  function practised(block) {
+    const d = today();
+    if (!S.profile.startDate) S.profile.startDate = d;
+    const day = S.days[d] || (S.days[d] = { blocks: [] });
+    if (block && !day.blocks.includes(block)) day.blocks.push(block);
+    save();
+  }
+  function applySettings() {
+    Object.assign(A.settings, { a4: S.settings.a4, gateDb: S.settings.gateDb, thr: S.settings.thr });
+    A.setWindow(S.settings.win);
+  }
+  applySettings();
+
+  const activeSong = () => S.songs.find((s) => s.id === S.activeSongId) || S.songs[0] || null;
+  function arrangement(song) { return C.arrange(song, S.profile.range); }
+  function songPairs() {
+    const song = activeSong();
+    if (!song) return null;
+    const a = arrangement(song);
+    if (a.empty) return null;
+    return C.changePairs(a.sheet.chords.map(a.shapeNameOf));
+  }
+
+  // ================================================================ DOM helpers
+  function h(tag, props, ...kids) {
+    const el = document.createElement(tag);
+    if (props) for (const [k, v] of Object.entries(props)) {
+      if (v === null || v === undefined || v === false) continue;
+      if (k.startsWith('on')) el.addEventListener(k.slice(2).toLowerCase(), v);
+      else if (k === 'class') el.className = v;
+      else if (k === 'html') el.innerHTML = v;
+      else if (k === 'value') el.value = v;
+      else if (k === 'checked') el.checked = !!v;
+      else el.setAttribute(k, v === true ? '' : v);
+    }
+    for (const k of kids.flat(Infinity)) {
+      if (k === null || k === undefined || k === false) continue;
+      el.append(k.nodeType ? k : document.createTextNode(String(k)));
+    }
+    return el;
+  }
+  let toastT;
+  function toast(msg, ms = 2600) {
+    let el = $('.toast');
+    if (!el) { el = h('div', { class: 'toast', role: 'status' }); document.body.append(el); }
+    el.textContent = msg; el.classList.remove('hidden');
+    clearTimeout(toastT); toastT = setTimeout(() => el.classList.add('hidden'), ms);
+  }
+  const sleep = (ms) => new Promise((r) => setTimeout(r, ms));
+  const esc = (s) => String(s).replace(/[&<>"]/g, (c) => ({ '&': '&amp;', '<': '&lt;', '>': '&gt;', '"': '&quot;' }[c]));
+  const nn = (m) => C.noteName(m);
+  const fmtTime = (s) => Math.floor(s / 60) + ':' + String(Math.max(0, Math.floor(s % 60))).padStart(2, '0');
+
+  // ================================================================ components
+  const OPEN_NAMES = ['E', 'A', 'D', 'G', 'B', 'e'];
+  function diagram(v, w = 84) {
+    const ns = 'http://www.w3.org/2000/svg';
+    const H = Math.round(w * 1.15), padX = 12, top = 22, strings = 6, frets = 5;
+    const gw = w - padX * 2, gh = H - top - 8, sx = gw / (strings - 1), fy = gh / frets;
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${w} ${H}`); svg.setAttribute('width', w); svg.setAttribute('height', H);
+    svg.setAttribute('role', 'img'); svg.setAttribute('aria-label', v ? v.name + ' chord diagram' : 'no diagram');
+    const add = (tag, attrs, text) => { const e = document.createElementNS(ns, tag); for (const k in attrs) e.setAttribute(k, attrs[k]); if (text !== undefined) e.textContent = text; svg.append(e); return e; };
+    if (!v) { add('text', { x: w / 2, y: H / 2, 'text-anchor': 'middle', fill: '#8aa4c0', 'font-size': 11 }, 'no easy shape'); return svg; }
+    const played = v.frets.filter((f) => f !== null && f > 0);
+    const maxF = played.length ? Math.max(...played) : 0, minF = played.length ? Math.min(...played) : 0;
+    const base = maxF > 5 ? minF : 1;
+    for (let s = 0; s < strings; s++) add('line', { x1: padX + s * sx, y1: top, x2: padX + s * sx, y2: top + gh, stroke: '#5b7799', 'stroke-width': 1 });
+    for (let f = 0; f <= frets; f++) add('line', { x1: padX, y1: top + f * fy, x2: padX + gw, y2: top + f * fy, stroke: f === 0 && base === 1 ? '#e6f0fa' : '#5b7799', 'stroke-width': f === 0 && base === 1 ? 3 : 1 });
+    if (base > 1) add('text', { x: 1, y: top + fy * 0.7, fill: '#8aa4c0', 'font-size': 9 }, base + 'fr');
+    v.frets.forEach((f, s) => {
+      const x = padX + s * sx;
+      if (f === null) add('text', { x, y: top - 6, 'text-anchor': 'middle', fill: '#fca5a5', 'font-size': 10, 'font-weight': 700 }, '×');
+      else if (f === 0) add('circle', { cx: x, cy: top - 9, r: 3.2, fill: 'none', stroke: '#e6f0fa', 'stroke-width': 1.3 });
+      else add('circle', { cx: x, cy: top + (f - base + 0.5) * fy, r: Math.min(sx, fy) * 0.34, fill: '#14b8a6' });
+    });
+    return svg;
+  }
+  function chordCard(name, capo, opts = {}) {
+    const ch = C.parseChord(name), v = ch ? C.voicing(ch) : null;
+    const hard = ch && C.shapeCost(ch) >= 2.6;
+    return h('button', {
+      class: 'diag' + (hard ? ' hard' : ''), type: 'button', title: 'Tap to hear',
+      onclick: async () => { await A.ensure(); if (v) A.strum(v.frets, capo || 0); },
+    }, h('div', { class: 'n' }, name), diagram(v, opts.w || 84), hard ? h('div', { class: 'tiny warn' }, 'barre/stretch') : null);
+  }
+
+  function sparkline(values, opts = {}) {
+    const ns = 'http://www.w3.org/2000/svg', w = 300, H = 60;
+    const svg = document.createElementNS(ns, 'svg');
+    svg.setAttribute('viewBox', `0 0 ${w} ${H}`); svg.setAttribute('class', 'spark'); svg.setAttribute('preserveAspectRatio', 'none');
+    if (!values.length) return svg;
+    const max = Math.max(opts.target || 0, ...values) * 1.1 || 1, min = 0;
+    const X = (i) => values.length === 1 ? w / 2 : (i / (values.length - 1)) * (w - 8) + 4;
+    const Y = (v) => H - 4 - ((v - min) / (max - min)) * (H - 8);
+    if (opts.target) {
+      const l = document.createElementNS(ns, 'line');
+      Object.entries({ x1: 0, x2: w, y1: Y(opts.target), y2: Y(opts.target), stroke: '#f59e0b', 'stroke-dasharray': '4 4', 'stroke-width': 1 }).forEach(([k, v]) => l.setAttribute(k, v));
+      svg.append(l);
+    }
+    const p = document.createElementNS(ns, 'polyline');
+    p.setAttribute('points', values.map((v, i) => X(i) + ',' + Y(v)).join(' '));
+    p.setAttribute('fill', 'none'); p.setAttribute('stroke', '#14b8a6'); p.setAttribute('stroke-width', 2.5); p.setAttribute('vector-effect', 'non-scaling-stroke');
+    svg.append(p);
+    values.forEach((v, i) => { const c = document.createElementNS(ns, 'circle'); c.setAttribute('cx', X(i)); c.setAttribute('cy', Y(v)); c.setAttribute('r', 3); c.setAttribute('fill', '#5eead4'); svg.append(c); });
+    return svg;
+  }
+
+  const colorFor = (c) => { const a = Math.abs(c); return a <= 10 ? '#14b8a6' : a <= 25 ? '#5eead4' : a <= 50 ? '#f59e0b' : '#ef4444'; };
+  /** Live pitch display: readout + scrolling trace. getTarget() returns midi or null. */
+  function pitchView(getTarget) {
+    const note = h('div', { class: 'note' }, '—'), sub = h('div', { class: 'mut small' }, 'Tap "Start mic" and sing');
+    const needle = h('div', { class: 'needle' });
+    const canvas = h('canvas', { class: 'trace', 'aria-label': 'Pitch trace' });
+    const el = h('div', null,
+      h('div', { class: 'card readout' }, note, sub, h('div', { class: 'meter' }, h('div', { class: 'mid' }), needle), h('div', { class: 'scale' }, h('span', null, '−50¢ flat'), h('span', null, 'in tune'), h('span', null, 'sharp +50¢'))),
+      canvas);
+    const hist = [], SPAN = 6000;
+    let center = 57, lastVoiced = 0;
+    const fold = () => S.settings.fold;
+    const err = (m, ref) => { const c = (m - ref) * 100; return fold() ? C.foldCents(c) : c; };
+    function onFrame(f) {
+      hist.push({ t: f.t, m: f.midi });
+      while (hist.length && f.t - hist[0].t > SPAN) hist.shift();
+      const target = getTarget();
+      if (f.smooth !== null) {
+        lastVoiced = f.t;
+        const ref = target ?? Math.round(f.smooth), c = err(f.smooth, ref), col = colorFor(c);
+        note.textContent = nn(f.smooth); note.style.color = col;
+        sub.textContent = `${C.midiToFreq(f.smooth, S.settings.a4).toFixed(1)} Hz · ${c >= 0 ? '+' : ''}${c.toFixed(0)}¢` + (target !== null && target !== undefined ? ` vs ${nn(target)}` : '');
+        needle.style.opacity = 1; needle.style.background = col;
+        needle.style.left = (50 + Math.max(-50, Math.min(50, c))) + '%';
+      } else if (f.t - lastVoiced > 300) {
+        note.textContent = '—'; note.style.color = ''; needle.style.opacity = .25; needle.style.left = '50%';
+        sub.textContent = target !== null && target !== undefined ? 'Target ' + nn(target) : 'Listening…';
+      }
+      draw(f.t);
+    }
+    function draw(now) {
+      if (!canvas.isConnected) return;
+      const dpr = window.devicePixelRatio || 1, w = canvas.clientWidth, H = canvas.clientHeight;
+      if (!w) return;
+      if (canvas.width !== Math.round(w * dpr)) { canvas.width = Math.round(w * dpr); canvas.height = Math.round(H * dpr); }
+      const g = canvas.getContext('2d'); g.setTransform(dpr, 0, 0, dpr, 0, 0); g.clearRect(0, 0, w, H);
+      const span = 14, pps = H / span, L = 34, target = getTarget();
+      const voiced = hist.filter((p) => p.m !== null).slice(-5).map((p) => p.m);
+      const want = target ?? (voiced.length ? C.median(voiced) : center);
+      center += (want - center) * 0.1;
+      const y = (m) => H / 2 - (m - center) * pps;
+      g.font = '11px system-ui'; g.textBaseline = 'middle';
+      for (let m = Math.floor(center - span / 2) - 1; m <= Math.ceil(center + span / 2) + 1; m++) {
+        const yy = y(m), isC = C.mod(m, 12) === 0;
+        g.strokeStyle = isC ? '#2d5683' : '#16314f'; g.lineWidth = 1;
+        g.beginPath(); g.moveTo(L, yy); g.lineTo(w, yy); g.stroke();
+        g.fillStyle = isC ? '#cfe3f7' : '#6f8bab'; g.fillText(nn(m), 3, yy);
+      }
+      if (target !== null && target !== undefined) {
+        g.fillStyle = 'rgba(20,184,166,.18)'; g.fillRect(L, y(target + 0.5), w - L, pps);
+        g.strokeStyle = '#14b8a6'; g.lineWidth = 1.5; g.beginPath(); g.moveTo(L, y(target)); g.lineTo(w, y(target)); g.stroke();
+      }
+      let prev = null;
+      g.lineCap = 'round';
+      for (const p of hist) {
+        if (p.m === null) { prev = null; continue; }
+        let m = p.m;
+        if (target !== null && target !== undefined && fold()) m = target + C.foldCents((m - target) * 100) / 100;
+        const x = L + (w - L) * (1 - (now - p.t) / SPAN), yy = y(m);
+        const col = colorFor(err(m, target ?? Math.round(m)));
+        if (prev && Math.abs(prev.m - m) < 1) { g.strokeStyle = col; g.lineWidth = 3; g.beginPath(); g.moveTo(prev.x, prev.y); g.lineTo(x, yy); g.stroke(); }
+        else { g.fillStyle = col; g.beginPath(); g.arc(x, yy, 2, 0, 7); g.fill(); }
+        prev = { x, y: yy, m };
+      }
+    }
+    const off = A.onPitch(onFrame);
+    requestAnimationFrame(() => draw(performance.now()));
+    cleanup(off);
+    return el;
+  }
+
+  function micButton(onStart) {
+    const b = h('button', { class: 'btn primary grow', type: 'button' }, A.running ? 'Stop mic' : 'Start mic');
+    b.onclick = async () => {
+      if (A.running) { A.stopMic(); b.textContent = 'Start mic'; return; }
+      try { await A.startMic(); b.textContent = 'Stop mic'; if (onStart) onStart(); }
+      catch (e) { toast(micError(e), 4000); }
+    };
+    return b;
+  }
+  function micError(e) {
+    if (e && e.name === 'NotAllowedError') return 'Microphone permission was denied. Allow it in the browser site settings.';
+    if (e && e.name === 'NotFoundError') return 'No microphone found.';
+    return e && e.message ? e.message : 'Microphone error';
+  }
+  async function needMic() {
+    try { await A.startMic(); return true; } catch (e) { toast(micError(e), 4000); return false; }
+  }
+
+  // ================================================================ router + session
+  let cleanups = [];
+  function cleanup(fn) { cleanups.push(fn); }
+  function runCleanups() { cleanups.forEach((f) => { try { f(); } catch (e) { console.error(e); } }); cleanups = []; }
+
+  const BLOCKS = {
+    pitch: { title: 'Pitch warm-up', route: '#/voice/exercise' },
+    changes: { title: 'Chord changes', route: '#/guitar/changes' },
+    strum: { title: 'Strumming', route: '#/guitar/strum' },
+    layer: { title: 'Song ladder', route: null },
+  };
+  const blockRoute = (id) => id === 'layer' ? (activeSong() ? '#/play/' + activeSong().id : '#/songs') : BLOCKS[id].route;
+  let session = null; // {plan, idx, endsAt}
+  function startSession(fromIdx) {
+    const plan = C.planSession(S, today(), songPairs());
+    const doneToday = (S.days[today()] || { blocks: [] }).blocks;
+    let idx = fromIdx ?? plan.blocks.findIndex((b) => !doneToday.includes(b.id));
+    if (idx < 0) idx = 0;
+    session = { plan, idx, endsAt: Date.now() + plan.blocks[idx].min * 60000 };
+    location.hash = blockRoute(plan.blocks[idx].id);
+  }
+  function finishBlock() {
+    if (!session) return;
+    const b = session.plan.blocks[session.idx];
+    practised(b.id);
+    session.idx++;
+    if (session.idx >= session.plan.blocks.length) { session = null; toast('Session complete. See you tomorrow.'); location.hash = '#/today'; return; }
+    const nb = session.plan.blocks[session.idx];
+    session.endsAt = Date.now() + nb.min * 60000;
+    location.hash = blockRoute(nb.id);
+  }
+  function sessionBanner(blockId) {
+    if (!session || session.plan.blocks[session.idx].id !== blockId) return null;
+    const b = session.plan.blocks[session.idx];
+    const t = h('span', null, '');
+    const el = h('div', { class: 'banner' }, h('span', null, `Session ${session.idx + 1}/${session.plan.blocks.length} · ${BLOCKS[b.id].title}`), h('span', { class: 'grow' }), t,
+      h('button', { class: 'btn sm primary', type: 'button', onclick: finishBlock }, session.idx + 1 < session.plan.blocks.length ? 'Done, next' : 'Finish'));
+    const tick = () => {
+      const left = (session && session.endsAt - Date.now()) / 1000;
+      if (!session) return;
+      t.textContent = left > 0 ? fmtTime(left) : "Time's up";
+      el.classList.toggle('over', left <= 0);
+    };
+    tick();
+    const iv = setInterval(tick, 500); cleanup(() => clearInterval(iv));
+    return el;
+  }
+
+  const routes = [];
+  const route = (re, fn, tab) => routes.push({ re, fn, tab });
+  function render() {
+    runCleanups();
+    if (A.running) A.stopMic();
+    const hash = location.hash || '#/today';
+    const main = $('#view');
+    main.innerHTML = '';
+    for (const r of routes) {
+      const m = r.re.exec(hash.slice(1));
+      if (m) {
+        document.querySelectorAll('.tabs a').forEach((a) => a.classList.toggle('on', a.dataset.tab === r.tab));
+        try { main.append(r.fn(...m.slice(1))); }
+        catch (e) { console.error(e); main.append(h('div', { class: 'card bad' }, 'Something went wrong: ' + e.message)); }
+        window.scrollTo(0, 0);
+        return;
+      }
+    }
+    location.hash = '#/today';
+  }
+  window.addEventListener('hashchange', render);
+
+  // Expose internals for tests and debugging.
+  window.Riyaz = { get state() { return S; }, set state(v) { S = v; save(); }, save, C, A, render, startSession, get session() { return session; } };
+
+  // The screens are defined in screens.js-like sections below.
+  window.RiyazUI = { h, $, S: () => S, save, toast, sleep, esc, nn, fmtTime, diagram, chordCard, sparkline, pitchView, micButton, needMic, cleanup, route, render, practised, today, activeSong, arrangement, songPairs, startSession, finishBlock, sessionBanner, blockRoute, BLOCKS, applySettings, setActive: (id) => { S.activeSongId = id; save(); }, getSession: () => session, OPEN_NAMES };
+})();
+
+</script>
+<script>
+/* Riyaz screens: Today, Voice, Guitar. */
+(function () {
+  'use strict';
+  const C = window.Core, A = window.AudioEngine, U = window.RiyazUI;
+  const { h, toast, sleep, nn, cleanup, route } = U;
+  const st = () => U.S();
+
+  // ================================================================ TODAY
+  route(/^\/today$/, () => {
+    const S = st(), t = U.today();
+    const plan = C.planSession(S, t, U.songPairs());
+    const done = (S.days[t] || { blocks: [] }).blocks;
+    const streak = C.streak(Object.keys(S.days), t);
+    const song = U.activeSong();
+    const onboard = [
+      { ok: !!S.profile.range, label: 'Find your voice range', sub: '60 seconds, needs the mic', href: '#/voice/range' },
+      { ok: S.songs.length > 0, label: 'Add the song you want to play', sub: 'Paste chords + lyrics; the app re-keys it for your voice', href: '#/song-new' },
+      { ok: S.changes.length > 0, label: 'Learn your first chord pair', sub: 'One-minute changes drill', href: '#/guitar/changes' },
+    ];
+    const needOnboard = onboard.some((o) => !o.ok);
+    const el = h('div', null);
+    el.append(h('div', { class: 'card hl' },
+      h('div', { class: 'row between' },
+        h('div', null, h('div', { class: 'mut small' }, S.profile.startDate ? `Day ${plan.day}` : 'Welcome'), h('div', { class: 'big', style: S.profile.firstSongAt ? 'font-size:32px' : null }, S.profile.startDate ? (S.profile.firstSongAt ? 'Song unlocked' : `${plan.daysToSong} days`) : 'Riyaz'), h('div', { class: 'mut small' }, S.profile.startDate ? (S.profile.firstSongAt ? 'You played and sang a full song. Add another.' : 'to your first full song (target: day 21)') : 'Strum and sing your own songs in about 15 minutes a day.')),
+        h('div', { style: 'text-align:right' }, h('div', { class: 'big', style: 'font-size:34px' }, String(streak)), h('div', { class: 'mut tiny' }, 'day streak'), h('div', { class: 'mut tiny' }, '1 missed day is OK')))));
+    if (needOnboard) {
+      el.append(h('div', { class: 'card' }, h('h3', null, 'Get set up'),
+        h('ul', { class: 'steps' }, onboard.map((o, i) => h('li', null,
+          h('div', { class: 'chk' + (o.ok ? ' done' : ''), style: 'width:26px;height:26px;border-radius:50%;border:2px solid #1e3a5f;display:flex;align-items:center;justify-content:center;flex:none' + (o.ok ? ';background:#14b8a6;border-color:#14b8a6;color:#05221f' : '') }, o.ok ? '✓' : String(i + 1)),
+          h('div', { class: 'grow' }, h('div', { style: 'font-weight:700' }, o.label), h('div', { class: 'mut small' }, o.sub)),
+          o.ok ? null : h('a', { class: 'btn sm primary', href: o.href }, 'Go'))))));
+    }
+    const card = h('div', { class: 'card' },
+      h('div', { class: 'row between' }, h('h3', null, `Today's session · ${plan.total} min`), h('span', { class: 'pill' + (done.length === 4 ? ' ok' : '') }, `${done.length}/4 done`)));
+    plan.blocks.forEach((b, i) => {
+      const isDone = done.includes(b.id);
+      card.append(h('div', { class: 'block' },
+        h('div', { class: 'chk' + (isDone ? ' done' : '') }, isDone ? '✓' : String(i + 1)),
+        h('div', { class: 'grow' }, h('div', { class: 't' }, U.BLOCKS[b.id].title, ` · ${b.min} min`, b.weakest ? h('span', { class: 'focus' }, 'FOCUS') : null), h('div', { class: 'mut small' }, b.id === 'layer' ? (song ? `${song.title}: step ${(song.layer || { step: 1 }).step} of 4` : 'Add a song first') : b.why)),
+        h('button', { class: 'btn sm', type: 'button', onclick: () => U.startSession(i) }, isDone ? 'Again' : 'Start')));
+    });
+    card.append(h('button', { class: 'btn primary block', type: 'button', style: 'margin-top:8px', onclick: () => U.startSession() }, done.length >= 4 ? 'Run the session again' : done.length ? 'Continue session' : 'Start session'));
+    el.append(card);
+    if (plan.day <= 21) el.append(h('div', { class: 'card small' }, h('b', null, 'Sore fingertips? '), 'Normal for the first 2–3 weeks while calluses form. Fretting time is capped at about 8 minutes a day until day 14. Stop for sharp pain, numbness, or wrist pain.'));
+    return el;
+  }, 'today');
+
+  // ================================================================ VOICE
+  function voiceTabs(on) {
+    return h('div', { class: 'seg' }, [['#/voice', 'Mirror', 'mirror'], ['#/voice/exercise', 'Pitch score', 'ex'], ['#/voice/range', 'My range', 'range']].map(([href, l, k]) => h('a', { href, class: on === k ? 'on' : '' }, l)));
+  }
+  function songKeyTonic() {
+    const song = U.activeSong();
+    if (song) { const a = U.arrangement(song); if (!a.empty) return { tonic: a.newKey.tonic, mode: a.newKey.mode, label: `${song.title} (key ${a.newKey.name})` }; }
+    return { tonic: 0, mode: 'major', label: 'C major (add a song to use its key)' };
+  }
+
+  route(/^\/voice$/, () => {
+    const S = st();
+    let target = null;
+    const sel = h('select', { class: 'grow', 'aria-label': 'Target note', onchange: (e) => { target = e.target.value === '' ? null : +e.target.value; } },
+      h('option', { value: '' }, 'Free: nearest note'));
+    const lo = S.profile.range ? S.profile.range.lo - 2 : 40, hi = S.profile.range ? S.profile.range.hi + 2 : 79;
+    for (let m = lo; m <= hi; m++) sel.append(h('option', { value: m }, 'Target ' + nn(m)));
+    const ref = h('button', { class: 'btn', type: 'button', onclick: async () => { await A.ensure(); A.tone(target ?? 57, 1.5); } }, '▶ Hear');
+    return h('div', null, voiceTabs('mirror'),
+      U.pitchView(() => target),
+      h('div', { class: 'row', style: 'margin-top:10px' }, U.micButton(), sel, ref),
+      h('p', { class: 'mut small' }, 'Pick a target, tap Hear, then sing and keep the line inside the teal band. Headphones stop the reference tone leaking into the mic.'));
+  }, 'voice');
+
+  route(/^\/voice\/range$/, () => {
+    const S = st();
+    const el = h('div', null, voiceTabs('range'));
+    const r = S.profile.range;
+    const current = h('div', { class: 'card' + (r ? ' hl' : '') });
+    function showCurrent() {
+      const rr = st().profile.range;
+      current.innerHTML = '';
+      if (!rr) { current.append(h('div', { class: 'mut' }, 'No range yet. It takes about 60 seconds.')); return; }
+      current.append(h('div', { class: 'mut small' }, 'Your comfortable range'),
+        h('div', { class: 'big', id: 'rangeVal' }, `${nn(rr.lo)} – ${nn(rr.hi)}`),
+        h('div', { class: 'mut small' }, `${rr.hi - rr.lo} semitones · measured ${new Date(rr.date).toLocaleDateString()}`),
+        h('div', { class: 'row', style: 'margin-top:8px' },
+          h('span', { class: 'small mut' }, 'Adjust:'),
+          ...[['lo', -1, 'Low −'], ['lo', 1, 'Low +'], ['hi', -1, 'High −'], ['hi', 1, 'High +']].map(([k, d, l]) => h('button', {
+            class: 'btn sm', type: 'button', onclick: () => {
+              const x = st().profile.range; x[k] += d;
+              if (x.hi - x.lo < 5) { x[k] -= d; toast('Range must span at least 5 semitones'); return; }
+              U.save(); showCurrent();
+            },
+          }, l))));
+    }
+    showCurrent();
+    const stepTxt = h('div', { style: 'font-weight:700;font-size:17px' }, 'Ready when you are');
+    const help = h('div', { class: 'mut small' }, 'Sit somewhere quiet, phone about 30 cm away. Sing on "aah". Comfortable only: stop before your voice cracks, gets breathy, or strains.');
+    const bar = h('i'), prog = h('div', { class: 'progress' }, bar);
+    const go = h('button', { class: 'btn primary block', type: 'button' }, r ? 'Measure again' : 'Start range test');
+    const STEPS = [
+      { t: 'Sing a relaxed "aah" at your speaking pitch', ms: 3000 },
+      { t: 'Now slide DOWN slowly. Hold your lowest comfortable note', ms: 6000 },
+      { t: 'Now slide UP slowly. Hold your highest comfortable note', ms: 6000 },
+    ];
+    go.onclick = async () => {
+      if (!(await U.needMic())) return;
+      go.disabled = true;
+      const sets = [];
+      for (let i = 0; i < STEPS.length; i++) {
+        for (const n of [3, 2, 1]) { stepTxt.textContent = `${i + 1}/3 · ${STEPS[i].t} · in ${n}`; await sleep(700); }
+        stepTxt.textContent = `${i + 1}/3 · ${STEPS[i].t}`;
+        sets.push(await A.record(STEPS[i].ms, (p) => { bar.style.width = ((i + p) / STEPS.length * 100) + '%'; }));
+        if (!A.running) { go.disabled = false; return; }
+      }
+      const res = C.rangeFromFrames(sets, 300);
+      go.disabled = false;
+      if (!res || res.span < 5) {
+        stepTxt.textContent = 'Not enough steady notes caught';
+        help.textContent = 'Hold each note for about half a second. Move closer, or lower the noise gate in Settings, then try again.';
+        return;
+      }
+      st().profile.range = { lo: res.lo, hi: res.hi, date: Date.now() };
+      U.practised(null); U.save();
+      stepTxt.textContent = 'Done';
+      help.textContent = 'Saved. Your songs will now be re-keyed to fit this range.';
+      showCurrent();
+      toast(`Range saved: ${nn(res.lo)} – ${nn(res.hi)}`);
+    };
+    el.append(current, h('div', { class: 'card' }, stepTxt, help, prog, go), U.pitchView(() => null));
+    return el;
+  }, 'voice');
+
+  route(/^\/voice\/exercise$/, () => {
+    const S = st();
+    const key = songKeyTonic();
+    const notes = C.exerciseNotes(key.tonic, key.mode, S.profile.range);
+    let target = null;
+    const el = h('div', null, U.sessionBanner('pitch'), voiceTabs('ex'));
+    const status = h('div', { style: 'font-weight:700;font-size:17px' }, `Notes: ${notes.map(nn).join(' · ')}`);
+    const info = h('div', { class: 'mut small' }, `From ${key.label}. Each note: listen, then match and hold it for 3 seconds. Headphones help.`);
+    const results = h('div');
+    const go = h('button', { class: 'btn primary block', type: 'button' }, 'Start pitch score');
+    const last = S.pitch.slice(-10).map((p) => p.acc);
+    go.onclick = async () => {
+      if (!(await U.needMic())) return;
+      go.disabled = true; results.innerHTML = '';
+      const per = [];
+      const all = [];
+      for (let i = 0; i < notes.length; i++) {
+        target = notes[i];
+        status.textContent = `${i + 1}/${notes.length} · Listen: ${nn(target)}`;
+        A.tone(target, 1.2);
+        await sleep(1500);
+        status.textContent = `${i + 1}/${notes.length} · Sing ${nn(target)} and hold`;
+        const fr = await A.record(3000);
+        if (!A.running) { go.disabled = false; return; }
+        const scored = fr.filter((f) => f.t >= 1000);
+        const s = C.scoreHold(scored, target, st().settings.fold);
+        per.push({ note: nn(target), ...s }); all.push(...scored.map((f) => ({ ...f, target })));
+      }
+      target = null;
+      const inTune = all.filter((f) => f.midi !== null && Math.abs((st().settings.fold ? C.foldCents((f.midi - f.target) * 100) : (f.midi - f.target) * 100)) <= 50).length;
+      const acc = all.length ? Math.round(inTune / all.length * 100) : 0;
+      st().pitch.push({ date: Date.now(), acc, notes: per.map((p) => p.note) });
+      U.practised('pitch'); U.save();
+      status.textContent = `Pitch accuracy: ${acc}%`;
+      info.textContent = acc >= 70 ? 'At or above the 70% target. Keep it there.' : 'Target is 70% within ±50 cents. Slow down and listen before you sing.';
+      results.append(h('table', { class: 't' }, h('tr', null, h('th', null, 'Note'), h('th', null, 'In tune'), h('th', null, 'Heard'), h('th', null, 'Typical error')),
+        per.map((p) => h('tr', null, h('td', null, p.note), h('td', { class: p.acc >= 70 ? 'ok' : 'warn' }, p.acc + '%'), h('td', null, p.voiced + '%'), h('td', null, p.medianCents === null ? '—' : (p.medianCents > 0 ? '+' : '') + p.medianCents + '¢' + (p.medianCents < -15 ? ' flat' : p.medianCents > 15 ? ' sharp' : ''))))));
+      go.disabled = false; go.textContent = 'Run again';
+    };
+    el.append(h('div', { class: 'card' }, status, info, h('div', { style: 'margin-top:10px' }, go), results),
+      U.pitchView(() => target),
+      ...(last.length ? [h('div', { class: 'card' }, h('div', { class: 'mut small' }, 'Recent pitch scores (dashed = 70% target)'), U.sparkline(last, { target: 70 }))] : []));
+    return el;
+  }, 'voice');
+
+  // ================================================================ GUITAR
+  function guitarTabs(on) {
+    return h('div', { class: 'seg' }, [['#/guitar', 'Chords', 'chords'], ['#/guitar/changes', 'Changes', 'changes'], ['#/guitar/strum', 'Strum', 'strum']].map(([href, l, k]) => h('a', { href, class: on === k ? 'on' : '' }, l)));
+  }
+  route(/^\/guitar$/, () => {
+    const song = U.activeSong();
+    const el = h('div', null, guitarTabs('chords'));
+    if (song) {
+      const a = U.arrangement(song);
+      if (!a.empty) {
+        el.append(h('div', { class: 'card' },
+          h('h3', null, `${song.title}`), h('div', { class: 'mut small' }, a.capo ? `Capo on fret ${a.capo}. Tap a chord to hear it.` : 'No capo. Tap a chord to hear it.'),
+          h('div', { class: 'diagrams', style: 'margin-top:8px' }, a.shapes.map((n) => U.chordCard(n, a.capo)))));
+      }
+    }
+    el.append(h('div', { class: 'card' }, h('h3', null, 'Starter chords'), h('div', { class: 'mut small' }, 'These five open chords cover thousands of songs once a capo is used.'),
+      h('div', { class: 'diagrams', style: 'margin-top:8px' }, ['G', 'C', 'D', 'Em', 'Am'].map((n) => U.chordCard(n, 0)))));
+    el.append(h('div', { class: 'card small mut' }, 'Diagrams: strings low E (left) to high e (right). ○ = play open, × = do not play. Press just behind the fret wire with your fingertip.'));
+    return el;
+  }, 'guitar');
+
+  route(/^\/guitar\/changes$/, () => {
+    const S = st();
+    const pairs = (U.songPairs() || []).slice(0, 8);
+    const starters = C.STARTER_PAIRS.map((k) => ({ key: k, a: k.split('|')[0], b: k.split('|')[1], count: 0 }));
+    const all = [...pairs, ...starters.filter((s) => !pairs.find((p) => p.key === s.key))];
+    const m = C.metrics(S, pairs.length ? pairs : null);
+    let pair = all.find((p) => p.key === m.slowestPair.key) || all[0];
+    const el = h('div', null, U.sessionBanner('changes'), guitarTabs('changes'));
+    const sel = h('select', { class: 'grow', 'aria-label': 'Chord pair', onchange: (e) => { pair = all.find((p) => p.key === e.target.value); paint(); } },
+      all.map((p) => h('option', { value: p.key, selected: p.key === pair.key ? true : null }, `${p.a} ↔ ${p.b}` + (p.count ? ` · in song ×${p.count}` : ''))));
+    const diagWrap = h('div', { class: 'diagrams' });
+    const stats = h('div', { class: 'small mut' });
+    const chart = h('div');
+    function paint() {
+      diagWrap.innerHTML = '';
+      diagWrap.append(U.chordCard(pair.a, 0, { w: 110 }), U.chordCard(pair.b, 0, { w: 110 }));
+      const hist = st().changes.filter((c) => c.pair === pair.key);
+      stats.textContent = hist.length ? `Best ${Math.max(...hist.map((c) => c.cpm))}/min · last ${hist[hist.length - 1].cpm}/min · target 30/min` : 'No attempts yet. Target: 30 clean changes a minute.';
+      chart.innerHTML = '';
+      if (hist.length) chart.append(U.sparkline(hist.slice(-12).map((c) => c.cpm), { target: 30 }));
+    }
+    const timer = h('div', { class: 'timer' }, '1:00');
+    const entry = h('div', { class: 'hidden' });
+    let count = 0;
+    const val = h('div', { class: 'val' }, '0');
+    const setCount = (n) => { count = Math.max(0, Math.min(120, n)); val.textContent = count; };
+    entry.append(h('div', { class: 'mut small', style: 'text-align:center' }, 'How many clean changes did you make? Count only changes where every string rang.'),
+      h('div', { class: 'counter' }, h('button', { class: 'btn', type: 'button', onclick: () => setCount(count - 5) }, '−5'), h('button', { class: 'btn', type: 'button', onclick: () => setCount(count - 1) }, '−1'), val, h('button', { class: 'btn', type: 'button', onclick: () => setCount(count + 1) }, '+1'), h('button', { class: 'btn', type: 'button', onclick: () => setCount(count + 5) }, '+5')),
+      h('button', {
+        class: 'btn primary block', type: 'button', id: 'saveChanges', onclick: () => {
+          st().changes.push({ pair: pair.key, cpm: count, date: Date.now() });
+          U.practised('changes');
+          entry.classList.add('hidden'); go.classList.remove('hidden'); timer.textContent = '1:00';
+          toast(`Saved ${count}/min for ${pair.a} ↔ ${pair.b}`); paint();
+        },
+      }, 'Save'));
+    let iv = null;
+    const go = h('button', { class: 'btn primary block', type: 'button' }, 'Start 60-second drill');
+    go.onclick = async () => {
+      await A.ensure();
+      go.classList.add('hidden'); sel.disabled = true;
+      for (const n of [3, 2, 1]) { timer.textContent = n; A.tone(81, 0.08, 0, 0.2); await sleep(800); }
+      A.tone(88, 0.15, 0, 0.3);
+      const end = Date.now() + 60000;
+      iv = setInterval(() => {
+        const left = (end - Date.now()) / 1000;
+        timer.textContent = U.fmtTime(Math.ceil(Math.max(0, left)));
+        if (left <= 0) { clearInterval(iv); iv = null; A.tone(88, 0.4, 0, 0.35); timer.textContent = 'Stop'; sel.disabled = false; setCount(0); entry.classList.remove('hidden'); }
+      }, 100);
+    };
+    cleanup(() => iv && clearInterval(iv));
+    el.append(h('div', { class: 'card' }, h('div', { class: 'row' }, sel), h('div', { style: 'margin-top:8px' }, diagWrap), h('div', { style: 'margin-top:8px' }, stats), chart),
+      h('div', { class: 'card' }, timer, go, entry,
+        h('p', { class: 'mut small' }, 'Switch back and forth, strumming once per chord. Accuracy beats speed: a sloppy change does not count.')));
+    paint();
+    return el;
+  }, 'guitar');
+
+  route(/^\/guitar\/strum$/, () => {
+    const S = st();
+    let pat = C.PATTERNS.find((p) => p.id === S.strum.patternId) || C.PATTERNS[0];
+    const el = h('div', null, U.sessionBanner('strum'), guitarTabs('strum'));
+    const chips = h('div', { class: 'chips' });
+    const bpmV = h('b'), slots = h('div', { class: 'slots' });
+    const result = h('div');
+    const msg = h('div', { class: 'mut small' }, 'Mute the strings with your fretting hand, then strum and tap the pad with your thumb or a finger on each strum. Or tap along without the guitar first.');
+    const bpm = () => st().strum.bpm[pat.id];
+    function paint() {
+      chips.innerHTML = '';
+      C.PATTERNS.forEach((p) => chips.append(h('button', { class: 'chip' + (p.id === pat.id ? ' on' : ''), type: 'button', onclick: () => { pat = p; st().strum.patternId = p.id; U.save(); paint(); } }, p.name)));
+      bpmV.textContent = bpm() + ' bpm';
+      slots.innerHTML = '';
+      const counts = ['1', '&', '2', '&', '3', '&', '4', '&'];
+      pat.slots.split('').forEach((s, i) => slots.append(h('div', { class: 'slot' + (s !== '-' ? ' hit' : ''), 'data-i': i }, s === 'D' ? '↓' : s === 'U' ? '↑' : '·', h('span', { class: 'c' }, counts[i]))));
+      const hist = st().strum.history.filter((x) => x.pattern === pat.id);
+      result.innerHTML = '';
+      if (hist.length) result.append(h('div', { class: 'mut small' }, 'Recent scores (dashed = 85% target, then tempo goes up by 5)'), U.sparkline(hist.slice(-12).map((x) => x.score), { target: 85 }));
+    }
+    const pad = h('button', { class: 'pad', type: 'button', id: 'pad' }, 'TAP HERE ON EACH STRUM');
+    let taps = null;
+    pad.addEventListener('pointerdown', (e) => {
+      e.preventDefault();
+      if (!taps || !A.ctx) return;
+      taps.push(A.perfToAudio(e.timeStamp) - (st().profile.latencyMs || 0) / 1000);
+      pad.classList.add('flash'); setTimeout(() => pad.classList.remove('flash'), 80);
+    });
+    let met = null;
+    cleanup(() => met && met.stop());
+    const go = h('button', { class: 'btn primary block', type: 'button' }, 'Start round (1 count-in bar + 4 bars)');
+    go.onclick = async () => {
+      await A.ensure();
+      go.disabled = true;
+      const b = bpm(), bars = 4, e = 60 / b / 2;
+      taps = [];
+      const slotEls = [...slots.children];
+      met = A.metronome({
+        bpm: b, eighths: false, totalEighths: 8 * (bars + 1), startDelay: 0.4,
+        onEighth: (i) => {
+          slotEls.forEach((s) => s.classList.remove('cur'));
+          if (i >= 8) slotEls[i % 8].classList.add('cur');
+          msg.textContent = i < 8 ? `Count-in: ${Math.floor(i / 2) + 1}` : `Bar ${Math.floor(i / 8)} of ${bars}`;
+        },
+      });
+      const expected = C.patternHits(pat.slots, b, bars, met.t0 + 8 * e).map((x) => x.t);
+      window.Riyaz._strumExpected = expected;
+      const endAt = met.t0 + 8 * (bars + 1) * e + 0.35;
+      while (A.ctx.currentTime < endAt) await sleep(50);
+      met.stop();
+      slotEls.forEach((s) => s.classList.remove('cur'));
+      const window0 = met.t0 + 8 * e - 0.25;
+      const r = C.scoreTaps(expected, taps.filter((t) => t >= window0), b);
+      taps = null;
+      const nb = C.nextTempo(b, r.score);
+      st().strum.history.push({ pattern: pat.id, bpm: b, score: r.score, meanAbsMs: r.meanAbsMs, biasMs: r.biasMs, date: Date.now() });
+      st().strum.bpm[pat.id] = nb;
+      U.practised('strum');
+      const bias = r.biasMs === null ? '' : Math.abs(r.biasMs) < 15 ? 'Timing centred.' : r.biasMs > 0 ? `You tend to be ${r.biasMs} ms late.` : `You tend to be ${-r.biasMs} ms early (rushing).`;
+      msg.innerHTML = '';
+      msg.append(h('div', { class: 'big ' + (r.score >= 85 ? 'ok' : r.score >= 50 ? 'warn' : 'bad'), id: 'strumScore' }, r.score + '%'),
+        h('div', null, `${r.good} on time · ${r.off} off · ${r.miss} missed · ${r.extras} extra. ${bias}`),
+        h('div', { class: 'small' }, nb > b ? `Tempo up to ${nb} bpm.` : nb < b ? `Tempo down to ${nb} bpm. Get it clean first.` : `Stay at ${b} bpm until you hit 85%.`));
+      go.disabled = false; go.textContent = 'Next round';
+      paint();
+    };
+    el.append(h('div', { class: 'card' }, chips, h('div', { class: 'row between', style: 'margin-top:8px' }, h('span', null, 'Tempo: ', bpmV),
+      h('span', { class: 'row' }, h('button', { class: 'btn sm', type: 'button', onclick: () => { st().strum.bpm[pat.id] = Math.max(40, bpm() - 5); U.save(); paint(); } }, '−5'), h('button', { class: 'btn sm', type: 'button', onclick: () => { st().strum.bpm[pat.id] = Math.min(160, bpm() + 5); U.save(); paint(); } }, '+5'))), slots),
+      h('div', { class: 'card' }, msg, h('div', { style: 'margin:10px 0' }, pad), go),
+      h('div', { class: 'card' }, result, h('a', { href: '#/guitar/calibrate', class: 'small' }, 'Scores feel off? Calibrate tap timing')));
+    paint();
+    return el;
+  }, 'guitar');
+
+  route(/^\/guitar\/calibrate$/, () => {
+    const msg = h('div', { style: 'font-weight:700' }, 'Tap the pad exactly on each click.');
+    const cur = h('div', { class: 'mut small' }, `Current offset: ${st().profile.latencyMs || 0} ms`);
+    const pad = h('button', { class: 'pad', type: 'button' }, 'TAP ON THE CLICK');
+    let taps = null, met = null;
+    cleanup(() => met && met.stop());
+    pad.addEventListener('pointerdown', (e) => { e.preventDefault(); if (taps && A.ctx) taps.push(A.perfToAudio(e.timeStamp)); });
+    const go = h('button', { class: 'btn primary block', type: 'button' }, 'Start (4 count-in + 8 taps)');
+    go.onclick = async () => {
+      await A.ensure(); go.disabled = true; taps = [];
+      const bpm = 80, beat = 60 / bpm;
+      met = A.metronome({ bpm, totalEighths: 24, onEighth: (i) => { if (i % 2 === 0) msg.textContent = i < 8 ? `Listen… ${i / 2 + 1}` : `Tap! ${(i - 8) / 2 + 1}/8`; } });
+      const beats = Array.from({ length: 8 }, (_, k) => met.t0 + (4 + k) * beat);
+      while (A.ctx.currentTime < met.t0 + 12 * beat + 0.3) await sleep(50);
+      met.stop();
+      const offs = [];
+      for (const b of beats) {
+        let best = null;
+        for (const t of taps) if (Math.abs(t - b) < beat / 2 && (best === null || Math.abs(t - b) < Math.abs(best - b))) best = t;
+        if (best !== null) offs.push((best - b) * 1000);
+      }
+      go.disabled = false;
+      if (offs.length < 6) { msg.textContent = 'Not enough taps caught. Try again.'; return; }
+      const off = Math.round(C.median(offs));
+      if (Math.abs(off) > 250) { msg.textContent = `Offset of ${off} ms looks wrong. Try again.`; return; }
+      st().profile.latencyMs = off; U.save();
+      msg.textContent = `Saved: ${off} ms offset.`; cur.textContent = 'Strum scores now subtract this offset.';
+    };
+    return h('div', null, h('h2', null, 'Calibrate tap timing'), h('div', { class: 'card' }, h('p', { class: 'small mut' }, 'Bluetooth headphones and some phones add delay. This measures your personal offset so strum scores are fair. Use the same speaker or headphones you practise with.'), msg, cur, h('div', { style: 'margin:10px 0' }, pad), go), h('a', { href: '#/guitar/strum' }, '← Back to strumming'));
+  }, 'guitar');
+})();
+
+</script>
+<script>
+/* Riyaz screens: Songs, Play-along ladder, Progress, Settings + boot. */
+(function () {
+  'use strict';
+  const C = window.Core, A = window.AudioEngine, U = window.RiyazUI;
+  const { h, toast, sleep, nn, esc, cleanup, route } = U;
+  const st = () => U.S();
+  const findSong = (id) => st().songs.find((s) => s.id === id);
+
+  const SAMPLE = `{title: Amazing Grace (traditional)}
+[Verse 1]
+G                 G7         C          G
+Amazing grace, how sweet the sound
+G                        D
+That saved a wretch like me
+G               G7            C          G
+I once was lost, but now am found
+G         D           G
+Was blind, but now I see`;
+
+  // ================================================================ SONGS LIST
+  route(/^\/songs$/, () => {
+    const S = st();
+    const el = h('div', null, U.sessionBanner('layer'), h('div', { class: 'row between' }, h('h2', null, 'Songs'), h('a', { class: 'btn primary sm', href: '#/song-new' }, '+ Add song')));
+    if (!S.songs.length) {
+      el.append(h('div', { class: 'card empty' }, h('p', null, 'Paste chords and lyrics for a song you love: from a chord site, a songbook, or your notes. The app works out the key, re-keys it for your voice, and picks a capo so you only need easy chords.'), h('a', { class: 'btn primary', href: '#/song-new' }, 'Add your first song')));
+      return el;
+    }
+    const act = U.activeSong();
+    S.songs.forEach((s) => {
+      const a = U.arrangement(s);
+      el.append(h('a', { class: 'card', href: '#/song/' + s.id, style: 'display:block;text-decoration:none;color:inherit' + (act && act.id === s.id ? ';border-color:#14b8a6' : '') },
+        h('div', { class: 'row between' }, h('b', null, s.title), act && act.id === s.id ? h('span', { class: 'pill ok' }, 'current') : null),
+        a.empty ? h('div', { class: 'warn small' }, 'No chords found') : h('div', { class: 'mut small' }, `Key ${a.key.name} → ${a.newKey.name} · ${a.capo ? 'capo ' + a.capo : 'no capo'} · ${a.shapes.join(' ')}`),
+        h('div', { class: 'mut tiny' }, `Ladder step ${(s.layer || {}).step || 1} of 4` + (s.layer && s.layer.done ? ' · completed' : ''))));
+    });
+    return el;
+  }, 'songs');
+
+  // ================================================================ EDITOR
+  function editor(song) {
+    const isNew = !song;
+    const title = h('input', { type: 'text', id: 'songTitle', value: song ? song.title : '', placeholder: 'Song title' });
+    const raw = h('textarea', { id: 'songRaw', placeholder: 'Paste chords over lyrics, e.g.\n\nG        D\nYour lyric line here\nEm       C\nNext line\n\nChordPro like [G]this also works.', spellcheck: 'false' }, song ? song.raw : '');
+    const preview = h('div', { class: 'small mut', id: 'parsePreview' });
+    let autoTitle = '';
+    title.addEventListener('input', () => { autoTitle = null; });
+    const updatePreview = () => {
+      const p = C.parseSheet(raw.value);
+      // Fill the title from {title: ...} unless the user typed their own.
+      if (p.title && autoTitle !== null && (title.value === '' || title.value === autoTitle)) { title.value = p.title; autoTitle = p.title; }
+      if (!p.chords.length) { preview.textContent = raw.value.trim() ? 'No chords recognised yet. Put chords on their own line above the lyrics.' : ''; return; }
+      const k = C.estimateKey(p.chords);
+      preview.textContent = `Found ${p.chords.length} chords (${[...new Set(p.chords.map((c) => C.chordName(c)))].join(' ')}) · looks like key ${k.name}`;
+    };
+    raw.addEventListener('input', updatePreview);
+    const saveBtn = h('button', {
+      class: 'btn primary grow', type: 'button', id: 'saveSong', onclick: () => {
+        const p = C.parseSheet(raw.value);
+        if (!p.chords.length) { toast('Add at least one chord line first.'); return; }
+        const S = st();
+        if (isNew) {
+          const s = { id: 's' + Date.now().toString(36), title: title.value.trim() || p.title || 'Untitled song', raw: raw.value, span: 'typical', simplify: true, bpm: 70, barsPerChord: 1, patternId: 'p3', layer: { step: 1, passes: {} }, created: Date.now() };
+          S.songs.push(s); S.activeSongId = s.id; U.save();
+          location.hash = '#/song/' + s.id;
+        } else {
+          song.title = title.value.trim() || 'Untitled song';
+          if (song.raw !== raw.value) { song.raw = raw.value; delete song.capo; delete song.keyOverride; }
+          U.save(); location.hash = '#/song/' + song.id;
+        }
+      },
+    }, isNew ? 'Save song' : 'Save changes');
+    const el = h('div', null, h('h2', null, isNew ? 'Add a song' : 'Edit song'),
+      h('div', { class: 'card' }, h('label', { class: 'f' }, 'Title'), title, h('label', { class: 'f' }, 'Chords and lyrics'), raw, preview,
+        h('div', { class: 'row', style: 'margin-top:10px' }, saveBtn, isNew ? h('button', { class: 'btn', type: 'button', onclick: () => { raw.value = SAMPLE; updatePreview(); } }, 'Load example') : null)),
+      h('div', { class: 'card small mut' }, 'Supported: chords on a line above lyrics, ChordPro [C]inline chords, section labels like [Chorus] or Antara:, bar lines | and repeats x2. Hindi, Marathi and other scripts work in lyrics. Chord alignment over non-Latin script is approximate.'));
+    updatePreview();
+    return el;
+  }
+  route(/^\/song-new$/, () => editor(null), 'songs');
+  route(/^\/song\/([\w-]+)\/edit$/, (id) => { const s = findSong(id); return s ? editor(s) : h('div', { class: 'card' }, 'Song not found'); }, 'songs');
+
+  // ================================================================ SHEET
+  function renderSheet(a, mode, onlyLine) {
+    const pre = h('div', { class: 'sheet', id: 'sheet' });
+    let seqIdx = 0, html = '';
+    a.sheet.lines.forEach((ln, li) => {
+      const nameFn = (c) => mode === 'concert' ? a.concertName(c) : a.shapeNameOf(c);
+      const dim = onlyLine !== undefined && onlyLine !== li;
+      const wrap = (s) => dim ? `<span style="opacity:.35">${s}</span>` : s;
+      if (ln.type === 'blank') { html += '\n'; return; }
+      if (ln.type === 'header') { html += wrap(`<span class="hd">${esc(ln.text)}</span>`) + '\n'; return; }
+      if (ln.type === 'lyric') { html += wrap(esc(ln.text)) + '\n'; return; }
+      const row = C.layoutChordRow(ln.items, nameFn);
+      let out = '', cur = 0;
+      row.spans.forEach((sp) => {
+        out += esc(row.text.slice(cur, sp.start)) + `<span class="ch" data-seq="${seqIdx + sp.idx}">${esc(row.text.slice(sp.start, sp.end))}</span>`;
+        cur = sp.end;
+      });
+      seqIdx += ln.items.length;
+      html += wrap(out) + '\n';
+      if (ln.type === 'pair') html += wrap(esc(ln.text)) + '\n';
+    });
+    pre.innerHTML = html;
+    return pre;
+  }
+
+  // ================================================================ SONG DETAIL
+  const KEYS = []; for (let t = 0; t < 12; t++) for (const m of ['major', 'minor']) KEYS.push({ tonic: t, mode: m });
+  route(/^\/song\/([\w-]+)$/, (id) => {
+    const song = findSong(id);
+    if (!song) return h('div', { class: 'card' }, 'Song not found. ', h('a', { href: '#/songs' }, 'Back to songs'));
+    const S = st();
+    const a = U.arrangement(song);
+    const el = h('div', null, h('div', { class: 'row between' }, h('h2', null, song.title), h('a', { href: '#/songs', class: 'small' }, 'All songs')));
+    if (a.empty) { el.append(h('div', { class: 'card warn' }, 'No chords recognised. ', h('a', { href: `#/song/${id}/edit` }, 'Edit the song'))); return el; }
+    const rerender = () => { U.save(); U.render(); };
+
+    // key card
+    const keySel = h('select', { 'aria-label': 'Original key', onchange: (e) => { if (e.target.value === 'auto') delete song.keyOverride; else { const [t, m] = e.target.value.split(':'); song.keyOverride = { tonic: +t, mode: m }; } delete song.capo; rerender(); } },
+      h('option', { value: 'auto' }, `Auto (${C.estimateKey(a.sheet.chords).name})`),
+      KEYS.map((k) => h('option', { value: k.tonic + ':' + k.mode, selected: song.keyOverride && song.keyOverride.tonic === k.tonic && song.keyOverride.mode === k.mode ? true : null }, C.keyName(k.tonic, k.mode))));
+    const shiftBy = (d) => { song.shift = Math.max(-11, Math.min(11, a.shift + d)); delete song.capo; rerender(); };
+    const fitTxt = !S.profile.range
+      ? h('div', { class: 'warn small' }, 'Measure your range so the key can be fitted to your voice. ', h('a', { href: '#/voice/range' }, 'Find my range'))
+      : h('div', { class: 'small ' + (a.fit && a.fit.overflow ? 'warn' : 'mut') },
+        `Melody assumed to run about ${nn(a.fit.low)}–${nn(a.fit.high)} (${song.span || 'typical'} span). Your range: ${nn(S.profile.range.lo)}–${nn(S.profile.range.hi)}.` + (a.fit.overflow ? ` About ${a.fit.overflow} semitone(s) fall outside your range; try another key or a narrower span.` : ' Fits.'));
+    const spanSel = h('select', { 'aria-label': 'Melody span', onchange: (e) => { song.span = e.target.value; delete song.shift; delete song.capo; rerender(); } },
+      [['narrow', 'Narrow melody (about 10 semitones)'], ['typical', 'Typical melody (about 14)'], ['wide', 'Wide melody (about 17)']].map(([v, l]) => h('option', { value: v, selected: (song.span || 'typical') === v ? true : null }, l)));
+    const hearKey = h('button', {
+      class: 'btn sm', type: 'button', onclick: async () => {
+        await A.ensure();
+        const t = a.fit ? a.fit.tonicMidi : 48 + a.newKey.tonic;
+        const tonicChord = { root: a.newKey.tonic, q: a.newKey.mode === 'minor' ? 'm' : '', bass: null };
+        const v = C.voicing(C.transposeChord(tonicChord, -a.capo));
+        if (v) A.strum(v.frets, a.capo);
+        A.tone(t, 1.6, 0.4, 0.3);
+      },
+    }, '▶ Hear key + home note');
+    el.append(h('div', { class: 'card hl' },
+      h('div', { class: 'row between' }, h('div', null, h('div', { class: 'mut small' }, 'Sing it in'), h('div', { class: 'big', id: 'newKey' }, a.newKey.name)),
+        h('div', { style: 'text-align:right' }, h('div', { class: 'mut small' }, 'Original'), h('div', { style: 'font-size:22px;font-weight:800' }, a.key.name), h('div', { class: 'mut tiny' }, a.shift === 0 ? 'no change' : (a.shift > 0 ? '+' : '') + a.shift + ' semitones'))),
+      fitTxt,
+      h('div', { class: 'row', style: 'margin-top:8px' }, h('button', { class: 'btn sm', type: 'button', onclick: () => shiftBy(-1) }, '♭ Lower'), h('button', { class: 'btn sm', type: 'button', onclick: () => shiftBy(1) }, '♯ Higher'),
+        typeof song.shift === 'number' ? h('button', { class: 'btn sm', type: 'button', onclick: () => { delete song.shift; delete song.capo; rerender(); } }, 'Auto-fit') : null, hearKey),
+      h('details', { style: 'margin-top:8px' }, h('summary', { class: 'small mut' }, 'Key settings'),
+        h('label', { class: 'f' }, 'Original key (if the guess is wrong)'), keySel, h('label', { class: 'f' }, 'How wide is the melody?'), spanSel,
+        h('p', { class: 'tiny mut' }, 'The app cannot see the melody, so it assumes a span around the home note. If the chorus feels too high, tap Lower; too low, Higher. Your choice is kept.'))));
+
+    // guitar card
+    const capoChips = h('div', { class: 'chips', id: 'capoChips' }, a.alternatives.map((alt) => h('button', {
+      class: 'chip' + (alt.capo === a.capo ? ' on' : ''), type: 'button',
+      onclick: () => { song.capo = alt.capo; rerender(); },
+    }, (alt.capo ? `Capo ${alt.capo}` : 'No capo') + ': ' + alt.shapes.join(' ') + (alt.hard.length ? ' *' : ''))));
+    el.append(h('div', { class: 'card' },
+      h('div', { class: 'row between' }, h('h3', null, a.capo ? `Capo on fret ${a.capo}` : 'No capo'), h('label', { class: 'small cbx' }, h('input', { type: 'checkbox', checked: a.simplify, onchange: (e) => { song.simplify = e.target.checked; delete song.capo; rerender(); } }), 'Simplify chords')),
+      h('div', { class: 'mut small' }, a.hard.length ? `Harder shapes: ${a.hard.join(', ')}. Tap a different capo option below if one avoids them.` : 'All open, beginner-friendly shapes.'),
+      h('div', { class: 'diagrams', style: 'margin:8px 0' }, a.shapes.map((n) => U.chordCard(n, a.capo))),
+      h('div', { class: 'mut tiny', style: 'margin-bottom:4px' }, 'Other options (* = includes a barre or stretch):'), capoChips));
+
+    // practise card
+    const bpmIn = h('input', { type: 'number', min: 40, max: 160, value: song.bpm || 70, style: 'width:80px', onchange: (e) => { song.bpm = Math.max(40, Math.min(160, +e.target.value || 70)); U.save(); } });
+    const bpc = h('select', { onchange: (e) => { song.barsPerChord = +e.target.value; U.save(); } }, [1, 2, 4].map((n) => h('option', { value: n, selected: (song.barsPerChord || 1) === n ? true : null }, `${n} bar${n > 1 ? 's' : ''} per chord`)));
+    const patSel = h('select', { onchange: (e) => { song.patternId = e.target.value; U.save(); } }, C.PATTERNS.map((p) => h('option', { value: p.id, selected: (song.patternId || 'p3') === p.id ? true : null }, p.name)));
+    el.append(h('div', { class: 'card' }, h('h3', null, 'Practise'),
+      h('div', { class: 'row' }, h('span', { class: 'small mut' }, 'Tempo'), bpmIn, bpc, patSel),
+      h('div', { class: 'row', style: 'margin-top:10px' }, h('a', { class: 'btn primary grow', href: '#/play/' + id, id: 'playBtn' }, 'Play along · song ladder'),
+        S.activeSongId !== id ? h('button', { class: 'btn', type: 'button', onclick: () => { U.setActive(id); toast('Set as your current song'); U.render(); } }, 'Make current') : null)));
+
+    // sheet
+    let mode = 'shape';
+    const sheetWrap = h('div');
+    const seg = h('div', { class: 'seg' }, h('button', { type: 'button', class: 'on' }, 'What you play'), h('button', { type: 'button' }, 'Actual pitch'));
+    [...seg.children].forEach((b, i) => b.onclick = () => { mode = i ? 'concert' : 'shape'; [...seg.children].forEach((x, j) => x.classList.toggle('on', j === i)); sheetWrap.innerHTML = ''; sheetWrap.append(renderSheet(a, mode)); });
+    sheetWrap.append(renderSheet(a, mode));
+    el.append(seg, sheetWrap,
+      h('div', { class: 'row', style: 'margin-top:12px' }, h('a', { class: 'btn', href: `#/song/${id}/edit` }, 'Edit'),
+        h('button', { class: 'btn danger', type: 'button', onclick: () => { if (!confirm('Delete this song?')) return; const S2 = st(); S2.songs = S2.songs.filter((s) => s.id !== id); if (S2.activeSongId === id) S2.activeSongId = S2.songs[0] ? S2.songs[0].id : null; U.save(); location.hash = '#/songs'; } }, 'Delete')));
+    return el;
+  }, 'songs');
+
+  // ================================================================ PLAY-ALONG LADDER
+  const RUNGS = [
+    { n: 1, t: 'Strum only', d: 'Play the chords in time. No singing. Keep the strum going even if a chord is messy: never stop the hand.' },
+    { n: 2, t: 'Strum + hum', d: 'Same as step 1, but hum the tune. Humming adds the voice without words to remember.' },
+    { n: 3, t: 'Strum + one line', d: 'Sing the first lyric line with its chords, twice. Only that line: build the habit small.' },
+    { n: 4, t: 'Full song', d: 'Strum and sing all the way through. Mistakes are fine; stopping is not.' },
+  ];
+  const PASSES_NEEDED = 2;
+  route(/^\/play\/([\w-]+)$/, (id) => {
+    const song = findSong(id);
+    if (!song) return h('div', { class: 'card' }, 'Song not found. ', h('a', { href: '#/songs' }, 'Back'));
+    const a = U.arrangement(song);
+    if (a.empty) return h('div', { class: 'card' }, 'No chords in this song.');
+    song.layer = song.layer || { step: 1, passes: {} };
+    song.layer.passes = song.layer.passes || {};
+    let rung = song.layer.step;
+    const el = h('div', null, U.sessionBanner('layer'), h('div', { class: 'row between' }, h('h2', null, song.title), h('a', { href: '#/song/' + id, class: 'small' }, 'Song settings')));
+    const ladder = h('div', { class: 'ladder', id: 'ladder' });
+    const desc = h('div', { class: 'small', style: 'margin-top:8px' });
+    const nowCur = h('div', { class: 'cur', id: 'nowChord' }, '—'), nowDiag = h('div'), nowNext = h('div', { class: 'nx' });
+    const slots = h('div', { class: 'slots' });
+    const pat = C.PATTERNS.find((p) => p.id === (song.patternId || 'p3')) || C.PATTERNS[2];
+    const counts = ['1', '&', '2', '&', '3', '&', '4', '&'];
+    pat.slots.split('').forEach((s, i) => slots.append(h('div', { class: 'slot' + (s !== '-' ? ' hit' : '') }, s === 'D' ? '↓' : s === 'U' ? '↑' : '·', h('span', { class: 'c' }, counts[i]))));
+    const sheetWrap = h('div');
+    const status = h('div', { class: 'mut small', id: 'playStatus' });
+    const verdict = h('div', { class: 'hidden', id: 'verdict' });
+    let backing = !!song.backing;
+    const bpmV = h('b', null, (song.bpm || 70) + ' bpm');
+
+    const firstLine = a.sheet.lines.findIndex((l) => l.type === 'pair' && l.items.length);
+    function sequence(r) {
+      if (r === 3 && firstLine >= 0) { const s = a.sheet.seq.filter((x) => x.line === firstLine); return [...s, ...s]; }
+      return a.sheet.seq;
+    }
+    function paintLadder() {
+      ladder.innerHTML = '';
+      RUNGS.forEach((r) => {
+        const locked = r.n > song.layer.step, passed = r.n < song.layer.step || (r.n === 4 && song.layer.done);
+        ladder.append(h('button', { type: 'button', class: 'rung' + (r.n === rung ? ' on' : '') + (locked ? ' locked' : '') + (passed ? ' passed' : ''), onclick: () => { if (locked) { toast(`Pass step ${r.n - 1} twice to unlock`); return; } rung = r.n; paintLadder(); paintSheet(); } },
+          h('b', null, passed ? '✓' : locked ? '–' : String(r.n)), r.t, locked ? h('span', { class: 'tiny', style: 'display:block' }, 'locked') : null));
+      });
+      const p = song.layer.passes[rung] || 0;
+      desc.innerHTML = '';
+      desc.append(h('b', null, `Step ${rung}: ${RUNGS[rung - 1].t}. `), RUNGS[rung - 1].d, h('div', { class: 'mut tiny', style: 'margin-top:4px' }, rung < 4 ? `Clean runs: ${p}/${PASSES_NEEDED} to unlock step ${rung + 1}.` : song.layer.done ? 'Completed. You can play and sing this song.' : 'One clean run completes the song.'));
+    }
+    function paintSheet(curSeq) {
+      sheetWrap.innerHTML = '';
+      const sh = renderSheet(a, 'shape', rung === 3 && firstLine >= 0 ? firstLine : undefined);
+      sheetWrap.append(sh);
+      if (curSeq !== undefined) {
+        const elc = sh.querySelector(`[data-seq="${curSeq}"]`);
+        if (elc) { elc.classList.add('cur'); elc.scrollIntoView({ block: 'nearest', inline: 'nearest' }); }
+      }
+    }
+    function showChord(seqIdx, nextIdx) {
+      const seq = a.sheet.seq;
+      const cur = a.shapeNameOf(seq[seqIdx].chord);
+      nowCur.textContent = cur;
+      nowDiag.innerHTML = ''; const ch = C.parseChord(cur); nowDiag.append(U.diagram(ch ? C.voicing(ch) : null, 70));
+      nowNext.textContent = nextIdx !== null && nextIdx !== undefined ? 'Next: ' + a.shapeNameOf(seq[nextIdx].chord) : 'Last chord';
+      sheetWrap.querySelectorAll('.ch.cur').forEach((x) => x.classList.remove('cur'));
+      const elc = sheetWrap.querySelector(`[data-seq="${seqIdx}"]`);
+      if (elc) { elc.classList.add('cur'); const box = sheetWrap.firstChild; if (box && elc.offsetTop) box.scrollTop = elc.offsetTop - 40; }
+    }
+    let met = null;
+    cleanup(() => met && met.stop());
+    const go = h('button', { class: 'btn primary block', type: 'button', id: 'playGo' }, 'Start');
+    const stop = () => { if (met) met.stop(); met = null; go.textContent = 'Start'; [...slots.children].forEach((s) => s.classList.remove('cur')); };
+    go.onclick = async () => {
+      if (met) { stop(); status.textContent = 'Stopped.'; return; }
+      await A.ensure();
+      verdict.classList.add('hidden');
+      const seq = sequence(rung), bpc = song.barsPerChord || 1, bpm = song.bpm || 70;
+      const seqIdxs = seq.map((x) => a.sheet.seq.indexOf(x));
+      const total = 8 + seq.length * bpc * 8;
+      go.textContent = 'Stop';
+      const slotEls = [...slots.children];
+      showChord(seqIdxs[0], seqIdxs[1] ?? null);
+      met = A.metronome({
+        bpm, eighths: false, totalEighths: total, startDelay: 0.4,
+        onEighth: (i, t) => {
+          slotEls.forEach((s) => s.classList.remove('cur'));
+          if (i < 8) { status.textContent = `Count-in ${Math.floor(i / 2) + 1}…`; return; }
+          slotEls[i % 8].classList.add('cur');
+          const bar = Math.floor((i - 8) / 8), ci = Math.floor(bar / bpc);
+          if ((i - 8) % (8 * bpc) === 0) {
+            showChord(seqIdxs[ci], ci + 1 < seqIdxs.length ? seqIdxs[ci + 1] : null);
+            if (backing) { const ch = C.parseChord(a.shapeNameOf(a.sheet.seq[seqIdxs[ci]].chord)); const v = ch && C.voicing(ch); if (v) A.strum(v.frets, a.capo, 0, 'D', 0.16); }
+          }
+          status.textContent = `Bar ${bar + 1} of ${seq.length * bpc}`;
+          if (i === total - 1) setTimeout(finished, 60 / bpm / 2 * 1000 + 150);
+        },
+      });
+    };
+    function finished() {
+      if (!met) return;
+      stop();
+      U.practised('layer');
+      status.textContent = 'Run finished.';
+      verdict.innerHTML = '';
+      verdict.append(h('div', { style: 'font-weight:700;margin-bottom:6px' }, 'Did you get through without stopping your strumming hand?'),
+        h('div', { class: 'row' },
+          h('button', { class: 'btn primary grow', type: 'button', id: 'cleanYes', onclick: () => grade(true) }, 'Yes, clean run'),
+          h('button', { class: 'btn grow', type: 'button', id: 'cleanNo', onclick: () => grade(false) }, 'No, I stopped')));
+      verdict.classList.remove('hidden');
+    }
+    function grade(ok) {
+      verdict.classList.add('hidden');
+      if (!ok) {
+        const slower = Math.max(40, (song.bpm || 70) - 5);
+        status.innerHTML = '';
+        status.append('No problem. Slowing down is the fastest fix. ', h('button', { class: 'btn sm', type: 'button', onclick: () => { song.bpm = slower; U.save(); bpmV.textContent = slower + ' bpm'; status.textContent = `Tempo now ${slower} bpm. Go again.`; } }, `Drop to ${slower} bpm`));
+        return;
+      }
+      const L = song.layer;
+      L.passes[rung] = (L.passes[rung] || 0) + 1;
+      if (rung === 4) {
+        L.done = true;
+        if (!st().profile.firstSongAt) st().profile.firstSongAt = Date.now();
+        status.textContent = 'Song complete: you played and sang it start to finish.';
+        toast('First full song done!', 4000);
+      } else if (L.passes[rung] >= PASSES_NEEDED && L.step === rung) {
+        L.step = rung + 1; rung = L.step;
+        status.textContent = `Step ${rung} unlocked.`;
+        toast(`Step ${rung} unlocked`);
+      } else status.textContent = `Clean run ${L.passes[rung]}/${PASSES_NEEDED}.`;
+      U.save(); paintLadder(); paintSheet();
+    }
+    const backingBox = h('label', { class: 'small cbx' }, h('input', { type: 'checkbox', checked: backing, onchange: (e) => { backing = e.target.checked; song.backing = backing; U.save(); } }), 'App strums each new chord (helps you hear it)');
+    el.append(h('div', { class: 'card' }, ladder, desc),
+      h('div', { class: 'card' }, h('div', { class: 'now' }, nowCur, nowDiag, h('div', { class: 'grow' }, nowNext, h('div', { class: 'mut tiny' }, a.capo ? `Capo ${a.capo}` : 'No capo'), h('div', { class: 'mut tiny' }, pat.name))), slots, status, verdict,
+        h('div', { style: 'margin-top:8px' }, go),
+        h('div', { class: 'row between', style: 'margin-top:8px' }, backingBox, h('span', { class: 'row' }, bpmV,
+          h('button', { class: 'btn sm', type: 'button', onclick: () => { song.bpm = Math.max(40, (song.bpm || 70) - 5); U.save(); bpmV.textContent = song.bpm + ' bpm'; } }, '−5'),
+          h('button', { class: 'btn sm', type: 'button', onclick: () => { song.bpm = Math.min(160, (song.bpm || 70) + 5); U.save(); bpmV.textContent = song.bpm + ' bpm'; } }, '+5')))),
+      sheetWrap);
+    paintLadder(); paintSheet();
+    showChord(sequence(rung).length ? a.sheet.seq.indexOf(sequence(rung)[0]) : 0, null);
+    nowNext.textContent = 'Press Start';
+    return el;
+  }, 'songs');
+
+  // ================================================================ PROGRESS
+  route(/^\/progress$/, () => {
+    const S = st(), t = U.today();
+    const m = C.metrics(S, U.songPairs());
+    const days = Object.keys(S.days);
+    const el = h('div', null, h('h2', null, 'Progress'));
+    el.append(h('div', { class: 'kpis' },
+      h('div', { class: 'kpi' }, h('div', { class: 'v', id: 'kStreak' }, String(C.streak(days, t))), h('div', { class: 'l' }, 'day streak')),
+      h('div', { class: 'kpi' }, h('div', { class: 'v' }, String(days.length)), h('div', { class: 'l' }, 'days practised')),
+      h('div', { class: 'kpi' }, h('div', { class: 'v' }, S.profile.firstSongAt ? '✓' : S.profile.startDate ? String(Math.max(0, 21 - C.daysBetween(S.profile.startDate, t))) : '—'), h('div', { class: 'l' }, S.profile.firstSongAt ? 'first song done' : 'days to song target'))));
+    const cal = h('div', { class: 'cal' });
+    for (let i = 27; i >= 0; i--) { const d = C.addDays(t, -i); cal.append(h('span', { class: (S.days[d] ? 'on' : '') + (i === 0 ? ' today' : ''), title: d })); }
+    el.append(h('div', { class: 'card' }, h('div', { class: 'mut small', style: 'margin-bottom:6px' }, 'Last 28 days'), cal));
+    const metric = (title, val, target, unit, series, link) => h('div', { class: 'card' },
+      h('div', { class: 'row between' }, h('h3', null, title), h('a', { href: link, class: 'small' }, 'Practise')),
+      h('div', { class: 'row' }, h('span', { class: 'big ' + (val === null ? 'mut' : val >= target ? 'ok' : 'warn'), style: 'font-size:32px' }, val === null ? '—' : val + unit), h('span', { class: 'mut small' }, `target ${target}${unit}`)),
+      series.length ? U.sparkline(series, { target }) : h('div', { class: 'mut small' }, 'No data yet.'));
+    el.append(metric('Pitch accuracy', m.pitch, 70, '%', S.pitch.slice(-20).map((p) => p.acc), '#/voice/exercise'));
+    el.append(metric(`Slowest chord change${m.slowestPair ? ` (${m.slowestPair.a} ↔ ${m.slowestPair.b})` : ''}`, m.slowestPair && m.slowestPair.best !== null && m.slowestPair.best !== undefined ? m.slowestPair.best : null, 30, '/min', S.changes.filter((c) => m.slowestPair && c.pair === m.slowestPair.key).slice(-20).map((c) => c.cpm), '#/guitar/changes'));
+    el.append(metric('Strum timing', m.strum, 85, '%', S.strum.history.slice(-20).map((x) => x.score), '#/guitar/strum'));
+    const pairs = {};
+    S.changes.forEach((c) => { pairs[c.pair] = Math.max(pairs[c.pair] || 0, c.cpm); });
+    if (Object.keys(pairs).length) el.append(h('div', { class: 'card' }, h('h3', null, 'Best changes per pair'), h('table', { class: 't' }, h('tr', null, h('th', null, 'Pair'), h('th', null, 'Best / min')), Object.entries(pairs).sort((x, y) => x[1] - y[1]).map(([k, v]) => h('tr', null, h('td', null, k.replace('|', ' ↔ ')), h('td', { class: v >= 30 ? 'ok' : 'warn' }, String(v)))))));
+    el.append(h('div', { class: 'card small' }, h('b', null, 'Voice range: '), S.profile.range ? `${nn(S.profile.range.lo)} – ${nn(S.profile.range.hi)}` : 'not measured', ' · ', h('b', null, 'Songs: '), String(S.songs.length), ' · ', h('b', null, 'Completed: '), String(S.songs.filter((s) => s.layer && s.layer.done).length)));
+    return el;
+  }, 'progress');
+
+  // ================================================================ SETTINGS
+  route(/^\/settings$/, () => {
+    const S = st();
+    const num = (label, key, min, max, step, hint) => h('div', null, h('label', { class: 'f' }, label), h('input', { type: 'number', min, max, step, value: S.settings[key], style: 'width:120px', onchange: (e) => { const v = +e.target.value; if (v >= min && v <= max) { st().settings[key] = v; U.save(); U.applySettings(); toast('Saved'); } } }), hint ? h('div', { class: 'tiny mut' }, hint) : null);
+    const file = h('input', { type: 'file', accept: 'application/json', class: 'hidden' });
+    file.onchange = async () => {
+      try {
+        const data = JSON.parse(await file.files[0].text());
+        if (!data || data.version !== 1 || !Array.isArray(data.songs)) throw new Error('Not a Riyaz backup');
+        window.Riyaz.state = data; U.applySettings(); toast('Backup restored'); location.hash = '#/today'; U.render();
+      } catch (e) { toast('Import failed: ' + e.message); }
+    };
+    return h('div', null, h('h2', null, 'Settings'),
+      h('div', { class: 'card' }, h('h3', null, 'Pitch detection'),
+        num('Reference A4 (Hz)', 'a4', 415, 466, 1, 'Leave at 440 unless you tune differently.'),
+        num('Noise gate (dB)', 'gateDb', -80, -20, 1, 'Raise (e.g. −45) if room noise draws a line; lower (e.g. −65) if quiet singing drops out.'),
+        num('Detection threshold', 'thr', 0.05, 0.3, 0.01, 'Lower = fewer wrong readings, more dropouts.'),
+        h('label', { class: 'f' }, 'Analysis window'),
+        h('select', { onchange: (e) => { st().settings.win = +e.target.value; U.save(); U.applySettings(); } }, [1024, 2048, 4096].map((n) => h('option', { value: n, selected: S.settings.win === n ? true : null }, n + (n === 2048 ? ' (default)' : n === 4096 ? ' (stabler, slower)' : ' (faster, voice only)')))),
+        h('label', { class: 'small cbx', style: 'margin-top:10px' }, h('input', { type: 'checkbox', checked: S.settings.fold, onchange: (e) => { st().settings.fold = e.target.checked; U.save(); } }), 'Count the right note in any octave as in tune')),
+      h('div', { class: 'card' }, h('h3', null, 'Timing'), h('div', { class: 'small' }, `Tap offset: ${S.profile.latencyMs || 0} ms. `, h('a', { href: '#/guitar/calibrate' }, 'Calibrate'))),
+      h('div', { class: 'card' }, h('h3', null, 'Your data'), h('p', { class: 'small mut' }, 'Everything is stored only on this device. Export a backup before clearing browser data.'),
+        h('div', { class: 'row' },
+          h('button', { class: 'btn', type: 'button', onclick: () => { const b = new Blob([JSON.stringify(st(), null, 1)], { type: 'application/json' }); const u = URL.createObjectURL(b); const l = h('a', { href: u, download: `riyaz-backup-${U.today()}.json` }); document.body.append(l); l.click(); l.remove(); setTimeout(() => URL.revokeObjectURL(u), 2000); } }, 'Export backup'),
+          h('button', { class: 'btn', type: 'button', onclick: () => file.click() }, 'Import backup'), file,
+          h('button', { class: 'btn danger', type: 'button', onclick: () => { if (confirm('Delete all progress and songs on this device?')) { localStorage.removeItem('riyaz.v1'); location.hash = '#/today'; location.reload(); } } }, 'Reset everything'))),
+      h('div', { class: 'card tiny mut' }, 'Riyaz MVP · works offline after the first visit · no account, no tracking.'));
+  }, null);
+
+  // ================================================================ BOOT
+  U.render();
+  if (false) {
+    navigator.serviceWorker.register('sw.js').catch((e) => console.warn('SW registration failed', e));
+  }
+})();
+
+</script>
+</body>
+</html>
